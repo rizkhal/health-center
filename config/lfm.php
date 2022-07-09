@@ -173,4 +173,10 @@ return [
     'php_ini_overrides'        => [
         'memory_limit' => '256M',
     ],
+
+    'middleware' => [
+        'web',
+    ],
+
+    'prefix_route' => '/filemanager',
 ];
