@@ -2,13 +2,13 @@
 
 namespace Modules\Core\Providers;
 
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
-use Nwidart\Modules\Facades\Module;
-use Illuminate\Support\ServiceProvider;
-use Inertia\Response as InertiaResponse;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Arr;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
+use Inertia\Response as InertiaResponse;
+use Nwidart\Modules\Facades\Module;
 
 class MacroServiceProvider extends ServiceProvider
 {
@@ -28,7 +28,7 @@ class MacroServiceProvider extends ServiceProvider
     public function registerModuleMacro(): void
     {
         Module::macro('findModuleJson', function (string $module, bool $returnType = false) {
-            return json_decode(file_get_contents(Module::getModulePath($module) . 'module.json'), $returnType);
+            return json_decode(file_get_contents(Module::getModulePath($module).'module.json'), $returnType);
         });
 
         Module::macro('getModuleJson', function (bool $returnType = false) {
@@ -67,15 +67,14 @@ class MacroServiceProvider extends ServiceProvider
 
                                 [$relationName_1, $relationName_2, $relationAttribute_1] = explode('.', $attribute);
 
-                                $query->orWhereHas($relationName_1 . '.' . $relationName_2, function (Builder $query) use ($relationAttribute_1, $searchTerm) {
-                                    $query->where($relationAttribute_1, 'LIKE', "%{$searchTerm}%");
-                                });
-                            else :
+                            $query->orWhereHas($relationName_1.'.'.$relationName_2, function (Builder $query) use ($relationAttribute_1, $searchTerm) {
+                                $query->where($relationAttribute_1, 'LIKE', "%{$searchTerm}%");
+                            }); else :
                                 [$relationName, $relationAttribute] = explode('.', $attribute);
 
-                                $query->orWhereHas($relationName, function (Builder $query) use ($relationAttribute, $searchTerm) {
-                                    $query->where($relationAttribute, 'LIKE', "%{$searchTerm}%");
-                                });
+                            $query->orWhereHas($relationName, function (Builder $query) use ($relationAttribute, $searchTerm) {
+                                $query->where($relationAttribute, 'LIKE', "%{$searchTerm}%");
+                            });
                             endif;
                         },
                         function (Builder $query) use ($attribute, $searchTerm) {

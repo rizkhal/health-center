@@ -24,7 +24,7 @@ class PostFactory extends Factory
         return [
             'id' => Str::uuid(),
             'title' => Str::random(30),
-            'slug' => Str::slug(Str::random(30), '-') . time(),
+            'slug' => Str::slug(Str::random(30), '-').time(),
             'content' => $this->faker->realText(),
         ];
     }

@@ -55,10 +55,10 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace($this->moduleNamespace)
             ->group(module_path('Core', '/Routes/web/index.php'));
 
-            Route::middleware('web')
+        Route::middleware('web')
             ->namespace($this->moduleNamespace)
             ->group(module_path('Core', '/Routes/web/file.php'));
-            
+
         Route::middleware('web')
             ->namespace($this->moduleNamespace)
             ->group(module_path('Core', '/Routes/web/auth.php'));

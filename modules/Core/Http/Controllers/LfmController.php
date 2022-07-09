@@ -12,16 +12,16 @@ class LfmController extends Controller
     {
         try {
             $file = $request->file('file');
-            $path = "photos/shares";
+            $path = 'photos/shares';
 
             $uploadedFile = Storage::disk('public')->put($path, $file);
 
             return response()->json([
-                'file' => $uploadedFile
+                'file' => $uploadedFile,
             ]);
         } catch (\Throwable $th) {
             return response()->json([
-                'message' => 'Failed when uploading image'
+                'message' => 'Failed when uploading image',
             ]);
         }
     }

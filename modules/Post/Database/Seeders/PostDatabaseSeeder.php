@@ -2,12 +2,12 @@
 
 namespace Modules\Post\Database\Seeders;
 
-use Illuminate\Support\Str;
-use Illuminate\Database\Seeder;
-use Modules\Core\Entities\User;
-use Modules\Post\Entities\Post;
-use Modules\Post\Entities\Category;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
+use Modules\Core\Entities\User;
+use Modules\Post\Entities\Category;
+use Modules\Post\Entities\Post;
 
 class PostDatabaseSeeder extends Seeder
 {

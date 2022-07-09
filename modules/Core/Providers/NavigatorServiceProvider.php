@@ -2,9 +2,9 @@
 
 namespace Modules\Core\Providers;
 
+use Illuminate\Support\ServiceProvider;
 use Modules\Core\Entities\User;
 use Nedwors\Navigator\Facades\Nav;
-use Illuminate\Support\ServiceProvider;
 
 class NavigatorServiceProvider extends ServiceProvider
 {

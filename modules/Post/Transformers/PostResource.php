@@ -2,9 +2,9 @@
 
 namespace Modules\Post\Transformers;
 
-use Modules\Post\Entities\Post;
-use Modules\Core\Transformers\UserResource;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Modules\Core\Transformers\UserResource;
+use Modules\Post\Entities\Post;
 
 class PostResource extends JsonResource
 {
@@ -16,7 +16,7 @@ class PostResource extends JsonResource
             'content' => $this->content,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'author' => UserResource::make($this->author)
+            'author' => UserResource::make($this->author),
         ];
     }
 }
