@@ -63,7 +63,7 @@ createInertiaApp({
     app.config.globalProperties.$helper = helper;
 
     // ziggy
-    app.config.globalProperties.$route = route
+    app.config.globalProperties.$route = route;
 
     // global component
     app.use(codegoen);

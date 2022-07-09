@@ -4,7 +4,7 @@
       :href="$route(item.setting.route)"
       v-for="(item, index) in settings"
       :key="index"
-      class="bg-purple-500 w-full p-4 rounded-md shadow text-white"
+      class="w-full rounded-md bg-purple-500 p-4 text-white shadow"
     >
       {{ item.name }}
     </v-app-link>
