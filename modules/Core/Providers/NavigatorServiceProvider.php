@@ -19,10 +19,11 @@ class NavigatorServiceProvider extends ServiceProvider
                             ->heroicon('HomeIcon')
                             ->icon('outline'),
 
-                        Nav::item(__('Api Docs'))
-                            ->for('/api/documentation')
-                            ->heroicon('DocumentTextIcon')
-                            ->icon('outline'),
+                        // SKIP ...
+                        // Nav::item(__('Api Docs'))
+                        //     ->for('/api/documentation')
+                        //     ->heroicon('DocumentTextIcon')
+                        //     ->icon('outline'),
 
                         Nav::item(__('Setting'))
                             ->for(route('dashboard.setting'))
