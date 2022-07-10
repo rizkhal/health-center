@@ -7,11 +7,14 @@
 </style>
 <template>
   <div>
+    <label v-if="label" class="form-label mb-1 text-sm capitalize">
+      {{ label }} <span v-if="required" class="text-xs text-red-500">*</span>
+    </label>
     <Multiselect
       :object="true"
       :v-bind="$attrs"
       v-model="modelValue"
-      placeholder="Choose a programming language"
+      :placeholder="placeholder"
       :filter-results="false"
       :min-chars="1"
       :resolve-on-load="false"
@@ -35,8 +38,18 @@ const props = defineProps({
   modelValue: {
     type: Object,
   },
+  label: {
+    type: String,
+  },
+  required: {
+    type: Boolean,
+    default: false,
+  },
   options: {
     type: [Function, Array, Object],
+  },
+  placeholder: {
+    type: String,
   },
 });
 

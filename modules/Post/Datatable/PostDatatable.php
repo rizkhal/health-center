@@ -19,9 +19,9 @@ class PostDatatable extends Inertable
     public function columns(): array
     {
         return [
-            Column::make(__('Title'), 'title')->sortable(),
-            Column::make(__('Created'), 'created_at')->sortable(),
-            Column::make(__('Category'), 'category.name')->sortable()->searchable(),
+            Column::make(__('Judul'), 'title')->sortable(),
+            Column::make(__('Dibuat'), 'created_at')->sortable(),
+            Column::make(__('Kategori'), 'category.name')->sortable()->searchable(),
             Column::make(__('Author'), 'author.username')->sortable(),
             Column::action(),
         ];

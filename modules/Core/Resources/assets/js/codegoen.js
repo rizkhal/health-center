@@ -54,6 +54,10 @@ export default {
       "v-dropdown",
       require("~/components/menu/dropdown.vue").default,
     );
+    app.component(
+      "v-dropdown2",
+      require("~/components/menu/dropdown2.vue").default,
+    );
 
     // form
     app.component(
@@ -97,10 +101,7 @@ export default {
       "v-loading-button",
       require("~/components/form/loading-button.vue").default,
     );
-    app.component(
-      "v-loading-button2",
-      require("~/components/form/loading-button2.vue").default,
-    );
+    app.component("v-button", require("~/components/form/button.vue").default);
     app.component(
       "v-phone-number",
       require("~/components/form/phone-number.vue").default,
