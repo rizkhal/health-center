@@ -36,19 +36,7 @@
             ? 'left-0'
             : position,
         ]"
-        class="
-          absolute
-          right-0
-          mt-2
-          min-w-[12rem]
-          origin-top-right
-          divide-y divide-gray-100
-          rounded-md
-          bg-white
-          shadow-lg
-          ring-1 ring-black ring-opacity-5
-          focus:outline-none
-        "
+        class="absolute right-0 mt-2 min-w-[12rem] origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
       >
         <slot name="content" />
       </v-menu-items>
