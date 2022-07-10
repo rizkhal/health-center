@@ -19,14 +19,8 @@ class NavigatorServiceProvider extends ServiceProvider
                             ->heroicon('HomeIcon')
                             ->icon('outline'),
 
-                        // SKIP ...
-                        // Nav::item(__('Api Docs'))
-                        //     ->for('/api/documentation')
-                        //     ->heroicon('DocumentTextIcon')
-                        //     ->icon('outline'),
-
                         Nav::item(__('Pengaturan'))
-                            ->for(route('dashboard.setting'))
+                            ->for(route('dashboard.kamen-theme.setting.index'))
                             ->heroicon('CogIcon')
                             ->icon('outline'),
                     ],

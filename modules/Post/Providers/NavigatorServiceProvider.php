@@ -22,10 +22,6 @@ class NavigatorServiceProvider extends ServiceProvider
                             ->for(route('dashboard.post.category.index'))
                             ->heroicon('TagIcon')
                             ->icon('outline'),
-                        // Nav::item(__('Langganan'))
-                        //     ->for(route('dashboard.post.subscriber.index'))
-                        //     ->heroicon('MailIcon')
-                        //     ->icon('outline'),
                     ]
                 ),
             ];
