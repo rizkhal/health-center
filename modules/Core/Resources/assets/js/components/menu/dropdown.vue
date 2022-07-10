@@ -5,21 +5,20 @@
     class="relative inline-block text-left"
     v-slot="{ open }"
   >
-    <slot name="button" :open="open" />
-
-    <v-menu-button
-      v-if="!$slots['button'] && buttonLabel"
-      class="btn-purple flex items-center"
-      :class="{ 'bg-purple-500': open }"
-    >
-      {{ buttonLabel }}
-      <v-icon
-        name="ChevronDownIcon"
-        type="outline"
-        class="ml-2 h-4 w-4"
-        aria-hidden="true"
-      />
-    </v-menu-button>
+    <slot name="button" :open="open">
+      <v-menu-button
+        class="btn-purple flex items-center"
+        :class="{ 'bg-purple-500': open }"
+      >
+        {{ buttonLabel }}
+        <v-icon
+          name="ChevronDownIcon"
+          type="outline"
+          class="ml-2 h-4 w-4"
+          aria-hidden="true"
+        />
+      </v-menu-button>
+    </slot>
 
     <transition
       enter-active-class="transition duration-200 ease-out"
@@ -37,7 +36,19 @@
             ? 'left-0'
             : position,
         ]"
-        class="absolute right-0 mt-2 min-w-[12rem] origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+        class="
+          absolute
+          right-0
+          mt-2
+          min-w-[12rem]
+          origin-top-right
+          divide-y divide-gray-100
+          rounded-md
+          bg-white
+          shadow-lg
+          ring-1 ring-black ring-opacity-5
+          focus:outline-none
+        "
       >
         <slot name="content" />
       </v-menu-items>

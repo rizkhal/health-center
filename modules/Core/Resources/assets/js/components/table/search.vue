@@ -13,7 +13,7 @@
       autocomplete="off"
       aria-label="search"
       v-model="modelValue"
-      placeholder="Search..."
+      placeholder="Cari..."
       @input="$emit('update:modelValue', $event.target.value)"
       class="dark:border-cool-gray-500 dark:bg-cool-gray-700 dark:text-cool-gray-300 dark:placeholder:text-cool-gray-400 appearance-none rounded-md border border-gray-300 py-2 pl-10 text-sm text-gray-800 outline-none focus:border-purple-500 focus:ring-0"
     />

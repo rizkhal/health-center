@@ -41,7 +41,7 @@
             </label>
           </div>
           <div class="flex border-t border-gray-100 bg-gray-100 px-10 py-4">
-            <v-loading-button2
+            <v-button
               text="Login"
               type="submit"
               class="ml-auto"

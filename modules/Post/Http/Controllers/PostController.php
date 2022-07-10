@@ -24,9 +24,13 @@ class PostController extends Controller
 
     public function store(PostRequest $request): RedirectResponse
     {
-        PostAction::create($request);
+        try {
+            PostAction::create($request);
 
-        return redirect()->route('dashboard.post.index')->with(['success' => 'Successfully add new post']);
+            return redirect()->route('dashboard.post.post.index')->with(['success' => __('Berhasil menambah artikel baru')]);
+        } catch (\Throwable $th) {
+            return back()->error(__('Terjadi kesalahan saat menambah artikel'));
+        }
     }
 
     public function edit(Post $post)
@@ -39,15 +43,23 @@ class PostController extends Controller
 
     public function update(Post $post, PostRequest $request): RedirectResponse
     {
-        PostAction::update($post, $request);
+        try {
+            PostAction::update($post, $request);
 
-        return redirect()->route('dashboard.post.index')->with(['success' => 'Successfully update existing post']);
+            return redirect()->route('dashboard.post.post.index')->with(['success' => __('Berhasil mengubah artikel')]);
+        } catch (\Throwable $th) {
+            return back()->error(__('Terjadi kesalahan saat mengubah artikel'));
+        }
     }
 
     public function destroy(Post $post)
     {
-        PostAction::destroy($post);
+        try {
+            PostAction::destroy($post);
 
-        return back()->with(['success' => 'Successfully delete post']);
+            return back()->success(__('Berhasil menghapus artikel'));
+        } catch (\Throwable $th) {
+            return back()->error(__('Terjadi kesalahan saat menghapus artikel'));
+        }
     }
 }

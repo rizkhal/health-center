@@ -14,18 +14,18 @@ class NavigatorServiceProvider extends ServiceProvider
             return [
                 Nav::item(__('Post'))->subItems(
                     [
-                        Nav::item(__('Post'))
+                        Nav::item(__('Artikel'))
                             ->for(route('dashboard.post.post.index'))
                             ->heroicon('PencilAltIcon')
                             ->icon('outline'),
-                        Nav::item(__('Category'))
+                        Nav::item(__('Kategori'))
                             ->for(route('dashboard.post.category.index'))
                             ->heroicon('TagIcon')
                             ->icon('outline'),
-                        Nav::item(__('Subscriber'))
-                            ->for(route('dashboard.post.subscriber.index'))
-                            ->heroicon('MailIcon')
-                            ->icon('outline'),
+                        // Nav::item(__('Langganan'))
+                        //     ->for(route('dashboard.post.subscriber.index'))
+                        //     ->heroicon('MailIcon')
+                        //     ->icon('outline'),
                     ]
                 ),
             ];

@@ -1,5 +1,6 @@
 // vue inertia core
 import { createApp, h } from "vue";
+import { createPinia } from "pinia";
 import { InertiaProgress } from "@inertiajs/progress";
 import { createInertiaApp } from "@inertiajs/inertia-vue3";
 
@@ -64,6 +65,9 @@ createInertiaApp({
 
     // ziggy
     app.config.globalProperties.$route = route;
+
+    // pinia stores
+    app.use(createPinia());
 
     // global component
     app.use(codegoen);

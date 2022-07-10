@@ -12,31 +12,26 @@
       />
     </div>
     <div class="col-span-12 lg:col-span-4">
-      <div class="flex flex-col space-y-4 rounded bg-gray-300 p-4 shadow">
+      <div class="flex flex-col space-y-4 rounded bg-gray-100 p-4 shadow">
         <v-text
           label="Title"
           :required="true"
           v-model="form.title"
           :error="form.errors.title"
         />
-        <v-text
-          label="Slug"
-          :required="true"
-          v-model="form.slug"
-          :error="form.errors.slug"
-        />
         <v-multi-select
           label="Category"
           :required="true"
           :create-option="true"
-          url="select/category"
           v-model="form.category"
           :error="form.errors.category"
+          :options="
+            async (query) => await useSelect().select(query, `/v1/categories`)
+          "
         />
         <div class="flex flex-row space-x-2">
-          <v-loading-button2 text="Preview" />
-          <v-loading-button2
-            text="Save"
+          <v-button
+            text="Ubah"
             @click.prevent="save"
             :loading="form.processing"
           />
@@ -45,41 +40,33 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  props: {
-    post: Object,
+<script setup>
+import { useForm } from "@inertiajs/inertia-vue3";
+import { useSelect } from "~/stores";
+
+const props = defineProps({
+  post: Object,
+});
+
+const form = useForm({
+  title: props.post.title,
+  category: {
+    value: props.post.category.id,
+    label: props.post.category.name,
   },
-  data() {
-    return {
-      form: this.$inertia.form({
-        title: this.post.title,
-        slug: this.post.slug,
-        category: {
-          value: this.post.category.id,
-          label: this.post.category.name,
-        },
-        content: this.post.content,
-      }),
-    };
-  },
-  methods: {
-    save() {
-      this.form.put(`/post/${this.post.id}`, {
-        onSuccess: () => {
-          this.form.reset();
-        },
-      });
-    },
-  },
-  watch: {
-    "form.title": {
-      handler: function (value) {
-        if (value) {
-          this.form.slug = this.$helper.convertToSlug(value);
-        }
+  content: props.post.content,
+});
+
+const save = () => {
+  form.put(
+    route("dashboard.post.post.update", {
+      post: props.post.id,
+    }),
+    {
+      onSuccess: () => {
+        form.reset();
       },
     },
-  },
+  );
 };
 </script>
