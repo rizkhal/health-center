@@ -2,8 +2,8 @@
 
 namespace Modules\Post\Http\Requests;
 
-use Illuminate\Support\Str;
 use App\Abstracts\FormRequest;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Modules\Post\Entities\Category;
 
@@ -35,7 +35,7 @@ class PostRequest extends FormRequest
 
         return array_merge($this->validated(), [
             'category_id' => $category->id,
-            'slug' => Str::of($this->title)->slug('-')
+            'slug' => Str::of($this->title)->slug('-'),
         ]);
     }
 }
