@@ -2,8 +2,8 @@
 
 namespace Modules\KamenTheme\Http\Controllers;
 
-use Inertia\Inertia;
 use Illuminate\Routing\Controller;
+use Inertia\Inertia;
 use Modules\KamenTheme\Entities\Setting\Hero;
 use Modules\KamenTheme\Entities\Setting\Logo;
 

@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modules\KamenTheme\Http\Controllers\SettingController;
 use Modules\KamenTheme\Http\Controllers\KamenThemeController;
 use Modules\KamenTheme\Http\Controllers\Setting\HeroController;
 use Modules\KamenTheme\Http\Controllers\Setting\LogoController;
+use Modules\KamenTheme\Http\Controllers\SettingController;
 use Modules\KamenTheme\Http\Middleware\HandleKamenThemeInertiaRequest;
 
 Route::prefix('dashboard')->as('dashboard.')->group(function () {

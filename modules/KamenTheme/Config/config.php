@@ -4,6 +4,6 @@ return [
     'name' => 'KamenTheme',
 
     'table' => [
-        'hero' => 'setting_hero'
+        'hero' => 'setting_hero',
     ],
 ];

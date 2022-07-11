@@ -2,9 +2,9 @@
 
 namespace Modules\KamenTheme\Entities\Setting;
 
-use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Logo extends Model
 {
@@ -18,7 +18,7 @@ class Logo extends Model
             get: fn ($value) => Str::of($value)->whenStartsWith(
                 ['http://', 'https://'],
                 fn ($str) => $str,
-                fn () => env('APP_URL', 'http://health-center.test') . "/{$value}"
+                fn () => env('APP_URL', 'http://health-center.test')."/{$value}"
             ),
         );
     }

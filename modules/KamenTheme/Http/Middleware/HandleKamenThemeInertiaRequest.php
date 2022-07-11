@@ -2,8 +2,8 @@
 
 namespace Modules\KamenTheme\Http\Middleware;
 
-use Inertia\Middleware;
 use Illuminate\Http\Request;
+use Inertia\Middleware;
 use Modules\KamenTheme\Entities\Setting\Logo;
 use Modules\Post\Entities\Category;
 
