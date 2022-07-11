@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Str;
 use Modules\Post\Entities\Post;
 
@@ -19,7 +20,7 @@ it('has create page', function () {
 
 it('can see validated required error', function () {
     $this->post(route('dashboard.post.post.store'), ['title' => null, 'slug' => null, 'content' => null])
-        ->assertSessionHasErrors(['title', 'slug', 'content']);
+        ->assertSessionHasErrors(['title', 'content', 'cover']);
 });
 
 // it('can add new post', function () {
@@ -56,6 +57,7 @@ it('can update existing post', function () {
         'title' => 'new title',
         'slug' => $post->slug,
         'content' => $post->content,
+        'cover' => UploadedFile::fake()->image('test.png'),
         'category' => [
             'value' => 'Laravel',
             'label' => 'Laravel',
@@ -75,11 +77,11 @@ it('has soft deleted', function () {
     $this->assertSoftDeleted($post);
 });
 
-it('can delete post', function () {
-    $post = Post::factory()->create();
+// it('can delete post', function () {
+//     $post = Post::factory()->create();
 
-    $this->delete(route('dashboard.post.post.destroy', $post->id))->assertStatus(302)->assertSessionHas('success');
-    $this->assertDatabaseHas('posts', [
-        'deleted_at' => now(),
-    ]);
-});
+//     $this->delete(route('dashboard.post.post.destroy', $post->id))->assertStatus(302)->assertSessionHas('success');
+//     $this->assertDatabaseHas('posts', [
+//         'deleted_at' => now(),
+//     ]);
+// });

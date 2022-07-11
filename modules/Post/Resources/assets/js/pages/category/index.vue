@@ -11,7 +11,7 @@
         type="button"
         class="btn-purple btn-ring-purple"
       >
-        New Category
+        Tambah Kategori
       </button>
     </template>
     <template #description="{ item: { description } }">
@@ -63,7 +63,7 @@ export default {
   methods: {
     create() {
       this.$modal.open({
-        title: "New Category",
+        title: "Tambah Kategori",
         component: require("./create.vue").default,
       });
     },
@@ -76,8 +76,8 @@ export default {
     },
     destroy(id) {
       this.$modal.destroy({
-        title: "Are you sure?",
-        message: "This will permanently delete the category from database",
+        title: "Apakah anda yakin?",
+        message: "Ini akan menghapus kategori secara permanen",
         onCancel: () => this.$modal.close(),
         onAccept: () => {
           this.$inertia.delete(
