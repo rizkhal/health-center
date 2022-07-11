@@ -3,7 +3,7 @@
     <v-app-link
       :href="$route('post.home')"
       :class="active('KamenTheme::index')"
-      class="flex flex-row items-center font-semibold p-4 lg:p-0"
+      class="flex flex-row items-center p-4 lg:p-0"
     >
       Beranda
     </v-app-link>
@@ -12,24 +12,28 @@
     <v-app-link
       :href="$route('post.video')"
       :class="active('KamenTheme::video')"
-      class="flex flex-row items-center font-semibold p-4 lg:p-0"
+      class="flex flex-row items-center p-4 lg:p-0"
     >
       Artikel
     </v-app-link>
   </li>
   <li>
-    <v-app-link
-      href="#"
-      class="flex flex-row items-center font-semibold p-4 lg:p-0"
-    >
+    <v-app-link href="#" class="flex flex-row items-center p-4 lg:p-0">
+      Fasilitas
+    </v-app-link>
+  </li>
+  <li>
+    <v-app-link href="#" class="flex flex-row items-center p-4 lg:p-0">
+      Kepuasan Masyarakat
+    </v-app-link>
+  </li>
+  <li>
+    <v-app-link href="#" class="flex flex-row items-center p-4 lg:p-0">
       Pelayanan
     </v-app-link>
   </li>
   <li>
-    <v-app-link
-      href="#"
-      class="flex flex-row items-center font-semibold p-4 lg:p-0"
-    >
+    <v-app-link href="#" class="flex flex-row items-center p-4 lg:p-0">
       Informasi
     </v-app-link>
   </li>
@@ -41,7 +45,7 @@ const page = usePage();
 
 const active = (component) => {
   return {
-    "text-pink-500": page.component.value === component,
+    "text-pink-500 font-semibold": page.component.value === component,
   };
 };
 </script>

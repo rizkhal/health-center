@@ -1116,10 +1116,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 3rem;
 }.w-20{
   width: 5rem;
-}.w-52{
-  width: 13rem;
-}.w-32{
-  width: 8rem;
 }.w-40{
   width: 10rem;
 }.min-w-full{
@@ -1134,12 +1130,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-width: 28rem;
 }.max-w-7xl{
   max-width: 80rem;
-}.max-w-4xl{
-  max-width: 56rem;
-}.max-w-xl{
-  max-width: 36rem;
-}.max-w-lg{
-  max-width: 32rem;
 }.flex-1{
   flex: 1 1 0%;
 }.flex-shrink-0{
@@ -1295,8 +1285,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(190 24 93 / 0.5);
 }.place-self-center{
   place-self: center;
-}.self-center{
-  align-self: center;
 }.overflow-auto{
   overflow: auto;
 }.overflow-hidden{
@@ -1502,9 +1490,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.py-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}.px-8{
-  padding-left: 2rem;
-  padding-right: 2rem;
 }.py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
