@@ -3,5 +3,5 @@
 use Illuminate\Support\Facades\Route;
 use Modules\KamenTheme\Http\Controllers\KamenThemeController;
 
-// KAMEN THEME  
+// KAMEN THEME
 Route::get('/', [KamenThemeController::class, 'post']);
