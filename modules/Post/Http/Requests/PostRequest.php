@@ -4,7 +4,6 @@ namespace Modules\Post\Http\Requests;
 
 use App\Abstracts\FormRequest;
 use Illuminate\Support\Str;
-use Illuminate\Validation\Rule;
 use Modules\Post\Entities\Category;
 
 class PostRequest extends FormRequest
@@ -16,13 +15,22 @@ class PostRequest extends FormRequest
         ]);
     }
 
+    public function attributes(): array
+    {
+        return [
+            'title' => __('Judul'),
+            'category' => __('Kategori'),
+            'cover' => __('Cover'),
+        ];
+    }
+
     public function rules(): array
     {
         return [
             'title' => ['required', 'string'],
             'content' => ['required', 'string'],
             'category' => ['required', 'string'],
-            // 'slug' => ['required', 'string', Rule::unique('posts', 'slug')->whereNull('deleted_at')->ignore($this->route('post'))],
+            'cover' => ['required', 'file'],
         ];
     }
 

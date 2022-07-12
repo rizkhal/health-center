@@ -11,7 +11,7 @@
         type="button"
         class="btn-purple btn-ring-purple"
       >
-        New Category
+        Tambah Kategori
       </button>
     </template>
     <template #description="{ item: { description } }">
@@ -24,14 +24,30 @@
       <div class="flex space-x-2">
         <button
           @click.prevent="edit(id)"
-          class="rounded-md bg-yellow-400 p-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2"
+          class="
+            rounded-md
+            bg-yellow-400
+            p-2
+            focus:outline-none
+            focus:ring-2
+            focus:ring-yellow-400
+            focus:ring-offset-2
+          "
         >
           <v-icon name="PencilIcon" type="solid" class="h-3 w-3 text-white" />
         </button>
         <button
           @click.prevent="destroy(id)"
           type="button"
-          class="rounded-md bg-red-500 p-2 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+          class="
+            rounded-md
+            bg-red-500
+            p-2
+            focus:outline-none
+            focus:ring-2
+            focus:ring-red-500
+            focus:ring-offset-2
+          "
         >
           <v-icon name="TrashIcon" type="solid" class="h-3 w-3 text-white" />
         </button>
@@ -47,7 +63,7 @@ export default {
   methods: {
     create() {
       this.$modal.open({
-        title: "New Category",
+        title: "Tambah Kategori",
         component: require("./create.vue").default,
       });
     },
@@ -60,8 +76,8 @@ export default {
     },
     destroy(id) {
       this.$modal.destroy({
-        title: "Are you sure?",
-        message: "This will permanently delete the category from database",
+        title: "Apakah anda yakin?",
+        message: "Ini akan menghapus kategori secara permanen",
         onCancel: () => this.$modal.close(),
         onAccept: () => {
           this.$inertia.delete(

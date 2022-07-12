@@ -73,6 +73,7 @@ createInertiaApp({
     app.use(codegoen);
 
     app.mount(el);
+
     return app;
   },
 });

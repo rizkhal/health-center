@@ -7,6 +7,13 @@ use Illuminate\Validation\Rule;
 
 class CategoryRequest extends FormRequest
 {
+    public function attributes(): array
+    {
+        return [
+            'name' => __('Kategori'),
+        ];
+    }
+
     public function rules(): array
     {
         return [

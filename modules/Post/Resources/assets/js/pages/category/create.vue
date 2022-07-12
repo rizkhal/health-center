@@ -9,13 +9,13 @@
         <v-text
           v-model="form.name"
           :error="form.errors.name"
-          label="Category Name"
+          label="Kategori"
           :required="true"
         />
         <v-textarea
           v-model="form.description"
           :error="form.errors.description"
-          label="Description"
+          label="Keterangan"
         />
       </div>
     </v-form-container>

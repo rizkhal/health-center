@@ -14,12 +14,12 @@ class PostController extends Controller
 {
     public function index(): Response
     {
-        return inertia('Post::post/index')->inertable(new PostDatatable)->title(__('Manage Post'));
+        return inertia('Post::article/index')->inertable(new PostDatatable)->title(__('Manage Post'));
     }
 
     public function create(): Response
     {
-        return inertia('Post::post/create')->title(__('Create Post'));
+        return inertia('Post::article/create')->title(__('Create Post'));
     }
 
     public function store(PostRequest $request): RedirectResponse
@@ -37,7 +37,7 @@ class PostController extends Controller
     {
         $post->load('category');
 
-        return inertia('Post::post/edit')->with(['post' => $post])
+        return inertia('Post::article/edit')->with(['post' => $post])
             ->title(__('Update post'));
     }
 

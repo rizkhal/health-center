@@ -4,11 +4,11 @@
   }
   
   .btn-purple {
-    @apply inline-flex justify-center px-4 py-2 text-sm font-medium text-purple-100 bg-purple-600 border border-transparent rounded-md hover:bg-purple-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-purple-500;
+    @apply inline-flex justify-center px-4 py-2 text-sm font-medium text-purple-100 bg-purple-600 border border-transparent rounded-md hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500;
   }
   
   .btn-red {
-    @apply inline-flex justify-center px-4 py-2 text-sm font-medium text-purple-100 bg-red-600 border border-transparent rounded-md hover:bg-red-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500;
+    @apply inline-flex justify-center px-4 py-2 text-sm font-medium text-purple-100 bg-red-600 border border-transparent rounded-md hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500;
   }
   
   .btn-ring-red {
@@ -20,7 +20,7 @@
   }
   
   .btn-close {
-    @apply inline-flex justify-center px-4 py-2 text-sm font-medium text-purple-900 bg-purple-100 border border-transparent rounded-md hover:bg-purple-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-purple-500;
+    @apply inline-flex justify-center px-4 py-2 text-sm font-medium text-purple-900 bg-purple-100 border border-transparent rounded-md hover:bg-purple-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500;
   }
   
   .btn-spinner,

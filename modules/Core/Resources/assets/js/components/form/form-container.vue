@@ -14,7 +14,11 @@
       <slot />
     </div>
     <div class="ml-auto flex flex-row items-center space-x-2 p-4">
-      <button @click.prevent="$emit('onCancel')" class="btn-red btn-ring-red">
+      <button
+        v-if="enableCancel"
+        class="btn-red btn-ring-red"
+        @click.prevent="$emit('onCancel')"
+      >
         {{ cancelText }}
       </button>
       <button
@@ -40,11 +44,15 @@ export default {
     },
     submitText: {
       type: String,
-      default: () => "Save",
+      default: () => "Simpan",
+    },
+    enableCancel: {
+      type: Boolean,
+      default: false,
     },
     cancelText: {
       type: String,
-      default: () => "Cancel",
+      default: () => "Batal",
     },
   },
 };

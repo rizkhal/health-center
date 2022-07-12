@@ -7,7 +7,7 @@ export const useSelect = defineStore("select", {
     select: throttle(async function (query, url) {
       try {
         const { data } = await http.get(
-          `${url}?q=${encodeURIComponent(query)}`,
+          `${url}?filter[name]=${encodeURIComponent(query)}`,
         );
 
         return data.data.map((v) => {

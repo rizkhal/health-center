@@ -4,7 +4,9 @@ namespace Modules\Core\Providers;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Inertia\Response as InertiaResponse;
@@ -23,6 +25,26 @@ class MacroServiceProvider extends ServiceProvider
         $this->regsisterCommonFields();
         $this->registerSearchWhereLike();
         $this->registerModuleMacro();
+        $this->registerRedirectResponse();
+    }
+
+    public function registerRedirectResponse()
+    {
+        RedirectResponse::macro('success', function (string $message) {
+            $this->with(['success' => $message]);
+
+            return $this;
+        });
+
+        RedirectResponse::macro('error', function (string $message, $context = []) {
+            if (! empty($context)) {
+                Log::error($message, $context);
+            }
+
+            $this->with(['error' => $message]);
+
+            return $this;
+        });
     }
 
     public function registerModuleMacro(): void
@@ -98,7 +120,7 @@ class MacroServiceProvider extends ServiceProvider
         Blueprint::macro('commonFields', function () {
             $this->timestamps();
             $this->softDeletes();
-            $this->foreignUuid('created_by');
+            $this->foreignUuid('created_by')->nullable();
             $this->foreignUuid('updated_by')->nullable();
             $this->foreignUuid('deleted_by')->nullable();
         });
