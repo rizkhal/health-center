@@ -16,8 +16,7 @@ class VissionMissionController extends Controller
 
         try {
 
-            // 
-
+            //
         } catch (\Throwable $th) {
             dd($th);
         }
