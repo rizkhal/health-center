@@ -21,7 +21,7 @@ class VissionMissionController extends Controller
             $vm->details()->createMany(
                 $request->getPointsCollection()->map(fn ($v) => [
                     'icon' => $v['icon'],
-                    'text' => $v['value']
+                    'text' => $v['value'],
                 ])
             );
 
