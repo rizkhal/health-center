@@ -11,7 +11,7 @@
       />
     </div>
 
-    <div class="md:h-screen md:sticky md:top-[1em]">
+    <div class="md:sticky md:top-[1em] md:h-screen">
       <kamen-heading title="Populars" right-text="See All" class="mt-8 mb-4" />
 
       <div class="flex flex-col space-y-4">

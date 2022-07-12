@@ -1,7 +1,7 @@
 <template>
   <TransitionRoot :show="isOpen" as="template">
     <Dialog
-      class="fixed inset-0 z-50 flex justify-center items-start"
+      class="fixed inset-0 z-50 flex items-start justify-center"
       :open="isOpen"
       @close="isOpen = false"
     >
@@ -29,16 +29,7 @@
         as="template"
       >
         <div
-          class="
-            w-full
-            max-w-2xl
-            bg-white
-            rounded-lg
-            mx-4
-            max-h-[80vh]
-            mt-[10vh]
-            relative
-          "
+          class="relative mx-4 mt-[10vh] max-h-[80vh] w-full max-w-2xl rounded-lg bg-white"
         >
           modal contents
         </div>
@@ -88,7 +79,7 @@ export default {
     onUnmounted(() => window.removeEventListener("keydown", onKeyDown));
 
     return {
-      isOpen
+      isOpen,
     };
   },
 };

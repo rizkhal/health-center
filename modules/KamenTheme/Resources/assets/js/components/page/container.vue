@@ -2,7 +2,7 @@
 //
 </script>
 <template>
-  <div class="p-8 mx-auto xl:px-10 px-6 flex flex-wrap">
+  <div class="mx-auto flex flex-wrap p-8 px-6 xl:px-10">
     <slot />
   </div>
 </template>

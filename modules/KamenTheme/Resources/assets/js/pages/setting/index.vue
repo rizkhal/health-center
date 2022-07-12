@@ -13,7 +13,7 @@ defineProps({
 });
 </script>
 <template>
-  <div class="grid grid-cols-2 gap-4 mb-6">
+  <div class="mb-6 grid grid-cols-2 gap-4">
     <SettingLogo :logo="logo" />
     <SettingHero :hero="hero" />
   </div>

@@ -9,7 +9,7 @@
 
       <kamen-heading title="Videos" right-text="See All" />
 
-      <div class="grid gap-4 mt-4 md:grid-cols-2 grid-cols-1">
+      <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
         <kamen-video-card
           v-for="(item, index) in Array.from({ length: 4 })"
           :key="index"

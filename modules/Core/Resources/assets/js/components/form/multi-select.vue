@@ -1,6 +1,6 @@
 <template>
   <div>
-    <label v-if="label" class="text-sm dark:text-cool-gray-200">
+    <label v-if="label" class="dark:text-cool-gray-200 text-sm">
       {{ label }} <span v-show="required" class="text-red-500">*</span>
     </label>
 
@@ -21,7 +21,7 @@
       :class="[
         error
           ? 'border-red-500 dark:border-red-500'
-          : 'border-gray-300 dark:border-cool-gray-500',
+          : 'dark:border-cool-gray-500 border-gray-300',
       ]"
     >
       <template #singlelabel="{ value }">

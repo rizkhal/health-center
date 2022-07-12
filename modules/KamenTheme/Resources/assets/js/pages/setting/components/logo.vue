@@ -28,7 +28,7 @@ const submit = () => {
 <template>
   <v-form-container title="Logo Aplikasi" @onSubmit="submit">
     <div class="flex flex-col space-y-4">
-      <div class="flex flex-col items-center justify-center mb-8">
+      <div class="mb-8 flex flex-col items-center justify-center">
         <input
           ref="logo"
           type="file"
@@ -37,7 +37,7 @@ const submit = () => {
           @input="handleFileUpload($event.target.files[0])"
         />
         <img
-          class="w-full rounded-md border shadow dark:border-cool-gray-800"
+          class="dark:border-cool-gray-800 w-full rounded-md border shadow"
           @click.prevent="$refs.logo.click()"
           :class="{ 'border-red-500': form.errors.logo }"
           :src="

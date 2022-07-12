@@ -17,7 +17,7 @@ const submit = () => {
 </script>
 <template>
   <v-form-container title="Halaman Utama" @onSubmit="submit">
-    <div class="flex flex-col space-y-4 mt-4">
+    <div class="mt-4 flex flex-col space-y-4">
       <v-text
         label="Judul"
         name="title"

@@ -12,70 +12,38 @@ defineProps({
 </script>
 <template>
   <kamen-container>
-    <div class="flex items-center w-full lg:w-1/2">
-      <div class="max-w-2xl mb-8">
+    <div class="flex w-full items-center lg:w-1/2">
+      <div class="mb-8 max-w-2xl">
         <h1
-          class="
-            text-4xl
-            font-bold
-            leading-snug
-            tracking-tight
-            text-gray-800
-            dark:text-white
-            lg:text-4xl lg:leading-tight
-            xl:text-6xl xl:leading-tight
-          "
+          class="text-4xl font-bold leading-snug tracking-tight text-gray-800 dark:text-white lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight"
         >
           {{ hero?.title }}
         </h1>
         <p
-          class="
-            py-5
-            text-xl
-            leading-normal
-            text-gray-500
-            lg:text-md
-            xl:text-xl
-            dark:text-gray-300
-          "
+          class="lg:text-md py-5 text-xl leading-normal text-gray-500 dark:text-gray-300 xl:text-xl"
           v-html="hero?.summary"
         ></p>
 
         <div
-          class="
-            space-y-3
-            items-start
-            flex flex-col
-            sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row
-          "
+          class="flex flex-col items-start space-y-3 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0"
         >
           <a
             href="https://web3templates.com/templates/nextly-landing-page-template-for-startups"
             target="_blank"
             rel="noopener"
-            class="
-              px-6
-              py-3
-              flex
-              text-lg
-              font-bold
-              rounded-md
-              items-center
-              bg-pink-600
-              text-center text-white
-            "
+            class="flex items-center rounded-md bg-pink-600 px-6 py-3 text-center text-lg font-bold text-white"
           >
             Pelayanan
-            <v-icon name="ArrowSmRightIcon" class="w-6 h-6 ml-2" />
+            <v-icon name="ArrowSmRightIcon" class="ml-2 h-6 w-6" />
           </a>
         </div>
       </div>
     </div>
-    <div class="flex items-center justify-center w-full lg:w-1/2">
+    <div class="flex w-full items-center justify-center lg:w-1/2">
       <img
         lazy
         alt="Dokter Default"
-        class="w-[617] h-[617]"
+        class="h-[617] w-[617]"
         src="../../images/doctor.svg"
       />
     </div>
@@ -130,17 +98,9 @@ defineProps({
   </div> -->
 
   <div
-    class="
-      p-8
-      mb-6
-      xl:px-0
-      mx-auto
-      container
-      flex flex-wrap
-      lg:gap-10 lg:flex-nowrap
-    "
+    class="container mx-auto mb-6 flex flex-wrap p-8 lg:flex-nowrap lg:gap-10 xl:px-0"
   >
-    <div class="flex items-center justify-center w-full lg:w-1/2">
+    <div class="flex w-full items-center justify-center lg:w-1/2">
       <img
         alt="Nurse 1"
         src="../../images/nurse1.svg"
@@ -153,51 +113,23 @@ defineProps({
         "
       />
     </div>
-    <div class="flex flex-wrap items-center w-full lg:w-1/2">
+    <div class="flex w-full flex-wrap items-center lg:w-1/2">
       <div>
-        <div class="flex flex-col w-full mt-4">
+        <div class="mt-4 flex w-full flex-col">
           <h3
-            class="
-              mt-3
-              text-3xl
-              max-w-2xl
-              font-bold
-              leading-snug
-              tracking-tight
-              text-gray-800
-              dark:text-white
-              lg:leading-tight lg:text-4xl
-            "
+            class="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 dark:text-white lg:text-4xl lg:leading-tight"
           >
             Visi
           </h3>
           <p
-            class="
-              py-4
-              text-lg
-              max-w-2xl
-              lg:text-xl
-              xl:text-xl
-              leading-normal
-              text-gray-500
-              dark:text-gray-300
-            "
+            class="max-w-2xl py-4 text-lg leading-normal text-gray-500 dark:text-gray-300 lg:text-xl xl:text-xl"
           >
             You can use this space to highlight your first benefit or a feature
             of your product. It can also contain an image or Illustration like
             in the example along with some bullet points.
           </p>
           <p
-            class="
-              py-4
-              text-lg
-              max-w-2xl
-              lg:text-xl
-              xl:text-xl
-              leading-normal
-              text-gray-500
-              dark:text-gray-300
-            "
+            class="max-w-2xl py-4 text-lg leading-normal text-gray-500 dark:text-gray-300 lg:text-xl xl:text-xl"
           >
             You can use this space to highlight your first benefit or a feature
             of your product. It can also contain an image or Illustration like
@@ -208,17 +140,9 @@ defineProps({
     </div>
   </div>
   <div
-    class="
-      p-8
-      mb-6
-      mx-auto
-      xl:px-0
-      container
-      flex flex-wrap
-      lg:gap-10 lg:flex-nowrap
-    "
+    class="container mx-auto mb-6 flex flex-wrap p-8 lg:flex-nowrap lg:gap-10 xl:px-0"
   >
-    <div class="flex items-center justify-center w-full lg:w-1/2 lg:order-1">
+    <div class="flex w-full items-center justify-center lg:order-1 lg:w-1/2">
       <div>
         <div
           style="
@@ -273,62 +197,33 @@ defineProps({
         </div>
       </div>
     </div>
-    <div class="flex flex-wrap items-center w-full lg:w-1/2 lg:justify-end">
+    <div class="flex w-full flex-wrap items-center lg:w-1/2 lg:justify-end">
       <div>
-        <div class="flex flex-col w-full mt-4">
+        <div class="mt-4 flex w-full flex-col">
           <h3
-            class="
-              mt-3
-              text-3xl
-              max-w-2xl
-              font-bold
-              leading-snug
-              tracking-tight
-              text-gray-800
-              dark:text-white
-              lg:leading-tight lg:text-4xl
-            "
+            class="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 dark:text-white lg:text-4xl lg:leading-tight"
           >
             Misi
           </h3>
           <p
-            class="
-              py-4
-              text-lg
-              max-w-2xl
-              lg:text-xl
-              xl:text-xl
-              leading-normal
-              text-gray-500
-              dark:text-gray-300
-            "
+            class="max-w-2xl py-4 text-lg leading-normal text-gray-500 dark:text-gray-300 lg:text-xl xl:text-xl"
           >
             You can use this same layout with a flip image to highlight your
             rest of the benefits of your product. It can also contain an image
             or Illustration as above section along with some bullet points.
           </p>
         </div>
-        <div class="w-full mt-5">
-          <div class="flex items-start mt-8 space-x-3">
+        <div class="mt-5 w-full">
+          <div class="mt-8 flex items-start space-x-3">
             <div
-              class="
-                w-11
-                h-11
-                flex
-                mt-1
-                rounded-md
-                items-center
-                bg-pink-500
-                flex-shrink-0
-                justify-center
-              "
+              class="mt-1 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-md bg-pink-500"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                class="w-7 h-7 text-pink-50"
+                class="h-7 w-7 text-pink-50"
               >
                 <path
                   stroke-linecap="round"
@@ -347,26 +242,16 @@ defineProps({
               </p>
             </div>
           </div>
-          <div class="flex items-start mt-8 space-x-3">
+          <div class="mt-8 flex items-start space-x-3">
             <div
-              class="
-                flex
-                w-11
-                h-11
-                mt-1
-                rounded-md
-                items-center
-                bg-pink-500
-                flex-shrink-0
-                justify-center
-              "
+              class="mt-1 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-md bg-pink-500"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                class="w-7 h-7 text-pink-50"
+                class="h-7 w-7 text-pink-50"
               >
                 <path
                   stroke-linecap="round"
@@ -385,26 +270,16 @@ defineProps({
               </p>
             </div>
           </div>
-          <div class="flex items-start mt-8 space-x-3">
+          <div class="mt-8 flex items-start space-x-3">
             <div
-              class="
-                flex
-                w-11
-                h-11
-                mt-1
-                rounded-md
-                items-center
-                flex-shrink-0
-                bg-pink-500
-                justify-center
-              "
+              class="mt-1 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-md bg-pink-500"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                class="w-7 h-7 text-pink-50"
+                class="h-7 w-7 text-pink-50"
               >
                 <path
                   stroke-linecap="round"

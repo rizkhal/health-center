@@ -1,12 +1,12 @@
 <template>
   <div
-    :class="{ 'flex justify-between items-center': rightText }"
-    class="relative md:mb-[2em] mb-4"
+    :class="{ 'flex items-center justify-between': rightText }"
+    class="relative mb-4 md:mb-[2em]"
   >
     <h1 class="text-3xl font-semibold">
       {{ title }}
     </h1>
-    <span class="h-[6px] w-20 bg-pink-500 absolute -bottom-2" />
+    <span class="absolute -bottom-2 h-[6px] w-20 bg-pink-500" />
 
     <v-app-link
       href="#"

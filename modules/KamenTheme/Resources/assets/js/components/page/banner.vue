@@ -1,23 +1,23 @@
 <template>
   <div class="bg-pink-600">
     <div class="py-3 px-3 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between flex-wrap">
-        <ul class="w-0 flex-1 flex items-center space-x-4">
+      <div class="flex flex-wrap items-center justify-between">
+        <ul class="flex w-0 flex-1 items-center space-x-4">
           <li class="flex items-center">
-            <v-icon name="MailIcon" type="outline" class="w-6 h-6 text-white" />
-            <p class="ml-2 font-medium text-white truncate">
+            <v-icon name="MailIcon" type="outline" class="h-6 w-6 text-white" />
+            <p class="ml-2 truncate font-medium text-white">
               <span> support@mail.com </span>
             </p>
           </li>
-          <li class="lg:flex items-center hidden">
-            <v-icon name="MailIcon" type="outline" class="w-6 h-6 text-white" />
-            <p class="ml-2 font-medium text-white truncate">
+          <li class="hidden items-center lg:flex">
+            <v-icon name="MailIcon" type="outline" class="h-6 w-6 text-white" />
+            <p class="ml-2 truncate font-medium text-white">
               <span> support@mail.com </span>
             </p>
           </li>
-          <li class="lg:flex items-center hidden">
-            <v-icon name="MailIcon" type="outline" class="w-6 h-6 text-white" />
-            <p class="ml-2 font-medium text-white truncate">
+          <li class="hidden items-center lg:flex">
+            <v-icon name="MailIcon" type="outline" class="h-6 w-6 text-white" />
+            <p class="ml-2 truncate font-medium text-white">
               <span> support@mail.com </span>
             </p>
           </li>

@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-white rounded-2xl p-3 shadow">
+  <div class="rounded-2xl bg-white p-3 shadow">
     <img
       src="../../../images/video1.jpg"
-      class="object-cover w-full rounded-2xl"
+      class="w-full rounded-2xl object-cover"
       :class="{ 'h-[30em]': lg, 'h-[13em]': sm }"
     />
     <div
@@ -13,26 +13,11 @@
       }"
     >
       <div
-        class="
-          flex
-          mt-4
-          flex-col
-          space-y-4
-          justify-between
-          md:flex-row md:space-y-0 md:mt-0
-        "
+        class="mt-4 flex flex-col justify-between space-y-4 md:mt-0 md:flex-row md:space-y-0"
       >
         <div>
           <span
-            class="
-              px-3
-              py-1
-              rounded-xl
-              bg-pink-200
-              uppercase
-              text-pink-500
-              font-bold
-            "
+            class="rounded-xl bg-pink-200 px-3 py-1 font-bold uppercase text-pink-500"
             :class="{ 'text-md': lg, 'text-xs': sm }"
           >
             Congress
@@ -47,31 +32,31 @@
           }"
         >
           <li>
-            <button class="text-xl font-bold flex flex-row items-center">
+            <button class="flex flex-row items-center text-xl font-bold">
               <v-icon
                 name="EyeIcon"
                 type="outline"
-                class="w-8 h-8 mr-2 text-gray-500"
+                class="mr-2 h-8 w-8 text-gray-500"
               />
               1.5m
             </button>
           </li>
           <li>
-            <button class="text-xl font-bold flex flex-row items-center">
+            <button class="flex flex-row items-center text-xl font-bold">
               <v-icon
                 name="ChatAlt2Icon"
                 type="outline"
-                class="w-8 h-8 mr-2 text-gray-500"
+                class="mr-2 h-8 w-8 text-gray-500"
               />
               35k
             </button>
           </li>
-          <li :class="{ 'lg:hidden inline': sm }">
-            <button class="text-xl font-bold flex flex-row items-center">
+          <li :class="{ 'inline lg:hidden': sm }">
+            <button class="flex flex-row items-center text-xl font-bold">
               <v-icon
                 name="ShareIcon"
                 type="outline"
-                class="w-8 h-8 mr-2 text-gray-500"
+                class="mr-2 h-8 w-8 text-gray-500"
               />
               35k
             </button>
@@ -81,20 +66,15 @@
     </div>
     <div
       :class="{
-        'flex flex-col space-y-4 px-3 md:pb-6 pb-3': lg,
+        'flex flex-col space-y-4 px-3 pb-3 md:pb-6': lg,
       }"
     >
       <div :class="{ 'mt-8': lg, 'mt-3': sm }">
         <v-app-link
           href="/posts/1"
-          class="
-            font-semibold
-            transition-all
-            leading-relaxed
-            hover:text-pink-500
-          "
+          class="font-semibold leading-relaxed transition-all hover:text-pink-500"
           :class="{
-            'lg:text-3xl md:text-2xl text-xl': lg,
+            'text-xl md:text-2xl lg:text-3xl': lg,
             'text-lg': sm,
           }"
         >
@@ -104,27 +84,13 @@
     </div>
     <div
       v-if="lg"
-      class="
-        flex
-        md:flex-row
-        flex-col
-        items-center
-        md:justify-between
-        justify-center
-        space-y-4
-        md:space-y-0
-        mt-4
-        md:mt-0
-        px-3
-        md:pb-6
-        pb-3
-      "
+      class="mt-4 flex flex-col items-center justify-center space-y-4 px-3 pb-3 md:mt-0 md:flex-row md:justify-between md:space-y-0 md:pb-6"
     >
       <div class="flex flex-row space-x-3">
         <div class="flex-shrink-0">
           <img
             src="../../../images/admin.jpg"
-            class="w-14 h-14 md:w-16 md:h-16 rounded-full"
+            class="h-14 w-14 rounded-full md:h-16 md:w-16"
           />
         </div>
         <div>
@@ -134,22 +100,12 @@
       </div>
       <div>
         <button
-          class="
-            px-5
-            py-3
-            flex
-            font-medium
-            rounded-2xl
-            items-center
-            text-pink-500
-            bg-pink-500/30
-            focus:ring-2 focus:ring-pink-500 focus:ring-offset-2
-          "
+          class="flex items-center rounded-2xl bg-pink-500/30 px-5 py-3 font-medium text-pink-500 focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
         >
           <v-icon
             name="ShareIcon"
             type="outline"
-            class="w-8 h-8 mr-2 text-pink-500"
+            class="mr-2 h-8 w-8 text-pink-500"
           />
           <span>Share on Media</span>
         </button>

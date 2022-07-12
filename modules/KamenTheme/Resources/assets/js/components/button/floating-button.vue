@@ -2,22 +2,10 @@
   <div class="relative">
     <v-app-link
       :href="$route('dashboard.dashboard')"
-      class="
-        p-4
-        fixed
-        right-5
-        bottom-5
-        text-white
-        rounded-full
-        items-center
-        focus:ring-2
-        flex flex-row
-        bg-green-500/80
-        focus:ring-offset-2 focus:ring-green-500/80 focus:ring-offset-current
-      "
+      class="fixed right-5 bottom-5 flex flex-row items-center rounded-full bg-green-500/80 p-4 text-white focus:ring-2 focus:ring-green-500/80 focus:ring-offset-2 focus:ring-offset-current"
     >
       <svg
-        class="w-10 h-10"
+        class="h-10 w-10"
         role="img"
         viewBox="0 0 24 24"
         fill="currentColor"

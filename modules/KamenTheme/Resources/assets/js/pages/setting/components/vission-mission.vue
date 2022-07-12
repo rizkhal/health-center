@@ -41,12 +41,12 @@ const save = () => {
         "
       />
 
-      <div class="flex flex-row space-x-2 items-center">
+      <div class="flex flex-row items-center space-x-2">
         <div class="w-full">
           <v-text />
         </div>
         <button class="btn-purple py-3">
-          <v-icon name="PlusIcon" class="w-4 h-4" />
+          <v-icon name="PlusIcon" class="h-4 w-4" />
         </button>
       </div>
     </div>

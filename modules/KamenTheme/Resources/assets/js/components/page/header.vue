@@ -1,38 +1,20 @@
 <template>
   <div
-    class="
-      grid
-      py-4
-      px-2
-      gap-4
-      shadow
-      lg:px-8
-      bg-white
-      grid-cols-2
-      items-center
-      lg:grid-cols-12
-    "
+    class="grid grid-cols-2 items-center gap-4 bg-white py-4 px-2 shadow lg:grid-cols-12 lg:px-8"
   >
     <div class="lg:col-span-2">
       <v-app-link :href="$route('post.home')" class="text-2xl font-bold">
         <img :src="logo?.logo" :alt="logo?.logo_alternative" />
       </v-app-link>
     </div>
-    <div class="lg:hidden inline ml-auto">
+    <div class="ml-auto inline lg:hidden">
       <button
-        class="
-          p-2
-          rounded-md
-          focus:ring-2
-          focus:outline-none
-          focus:ring-offset-2
-          focus:ring-pink-500
-        "
+        class="rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
         @click.prevent="state.toggle"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="w-8 h-8 text-gray-800"
+          class="h-8 w-8 text-gray-800"
           fill="currentColor"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -46,15 +28,15 @@
         </svg>
       </button>
     </div>
-    <div class="col-span-10 ml-auto lg:inline-block hidden">
-      <ul class="flex flex-row justify-center w-full space-x-6">
+    <div class="col-span-10 ml-auto hidden lg:inline-block">
+      <ul class="flex w-full flex-row justify-center space-x-6">
         <kamen-page-menu />
       </ul>
     </div>
   </div>
   <div
     :class="[state.open ? 'flex flex-col' : 'hidden']"
-    class="shadow border-t bg-white divide-y divide-gray-200 lg:hidden"
+    class="divide-y divide-gray-200 border-t bg-white shadow lg:hidden"
   >
     <div class="p-4">
       <!-- search button -->
