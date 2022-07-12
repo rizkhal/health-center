@@ -47,7 +47,7 @@ const save = () => {
 </script>
 <template>
   <v-form-container title="Visi &#38; Misi" @onSubmit="save">
-    <div class="flex flex-col space-y-14 mb-12">
+    <div class="mb-12 flex flex-col space-y-14">
       <v-editor
         label="Visi"
         :value="form.vission"
@@ -74,7 +74,7 @@ const save = () => {
     </div>
 
     <div
-      class="flex flex-row items-center space-x-2 mt-3"
+      class="mt-3 flex flex-row items-center space-x-2"
       v-for="(point, index) in form.points"
       :key="index"
     >
@@ -82,7 +82,7 @@ const save = () => {
       <v-text label="Point" v-model="point.value" class="w-full" />
 
       <button
-        class="btn-red py-3 mt-[22px]"
+        class="btn-red mt-[22px] py-3"
         @click.prevent="remove(index)"
         :disabled="form.points.length === 1"
       >
@@ -90,7 +90,7 @@ const save = () => {
       </button>
     </div>
     <div class="flex justify-end">
-      <button class="btn-purple py-3 mt-[22px]" @click.prevent="clone">
+      <button class="btn-purple mt-[22px] py-3" @click.prevent="clone">
         <v-icon name="PlusIcon" class="h-4 w-4" />
       </button>
     </div>
