@@ -6,6 +6,7 @@ use Illuminate\Routing\Controller;
 use Inertia\Inertia;
 use Modules\KamenTheme\Entities\Setting\Hero;
 use Modules\KamenTheme\Entities\Setting\Logo;
+use Modules\KamenTheme\Entities\Setting\VissionMission;
 
 class KamenThemeController extends Controller
 {
@@ -14,6 +15,7 @@ class KamenThemeController extends Controller
         return Inertia::render('KamenTheme::index', [
             'hero' => Hero::first(),
             'logo' => Logo::first(),
+            'vission' => VissionMission::with('details')->first(),
         ])->title(__('Landing Page'));
     }
 

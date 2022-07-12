@@ -6,8 +6,9 @@ export default {
 };
 </script>
 <script setup>
-defineProps({
+const props = defineProps({
   hero: Object,
+  vission: Object,
 });
 </script>
 <template>
@@ -15,23 +16,55 @@ defineProps({
     <div class="flex w-full items-center lg:w-1/2">
       <div class="mb-8 max-w-2xl">
         <h1
-          class="text-4xl font-bold leading-snug tracking-tight text-gray-800 dark:text-white lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight"
+          class="
+            text-4xl
+            font-bold
+            leading-snug
+            tracking-tight
+            text-gray-800
+            dark:text-white
+            lg:text-4xl lg:leading-tight
+            xl:text-6xl xl:leading-tight
+          "
         >
           {{ hero?.title }}
         </h1>
         <p
-          class="lg:text-md py-5 text-xl leading-normal text-gray-500 dark:text-gray-300 xl:text-xl"
+          class="
+            lg:text-md
+            py-5
+            text-xl
+            leading-normal
+            text-gray-500
+            dark:text-gray-300
+            xl:text-xl
+          "
           v-html="hero?.summary"
         ></p>
 
         <div
-          class="flex flex-col items-start space-y-3 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0"
+          class="
+            flex flex-col
+            items-start
+            space-y-3
+            sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0
+          "
         >
           <a
             href="https://web3templates.com/templates/nextly-landing-page-template-for-startups"
             target="_blank"
             rel="noopener"
-            class="flex items-center rounded-md bg-pink-600 px-6 py-3 text-center text-lg font-bold text-white"
+            class="
+              flex
+              items-center
+              rounded-md
+              bg-pink-600
+              px-6
+              py-3
+              text-center text-lg
+              font-bold
+              text-white
+            "
           >
             Pelayanan
             <v-icon name="ArrowSmRightIcon" class="ml-2 h-6 w-6" />
@@ -98,7 +131,15 @@ defineProps({
   </div> -->
 
   <div
-    class="container mx-auto mb-6 flex flex-wrap p-8 lg:flex-nowrap lg:gap-10 xl:px-0"
+    class="
+      container
+      mx-auto
+      mb-6
+      flex flex-wrap
+      p-8
+      lg:flex-nowrap lg:gap-10
+      xl:px-0
+    "
   >
     <div class="flex w-full items-center justify-center lg:w-1/2">
       <img
@@ -117,30 +158,47 @@ defineProps({
       <div>
         <div class="mt-4 flex w-full flex-col">
           <h3
-            class="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 dark:text-white lg:text-4xl lg:leading-tight"
+            class="
+              mt-3
+              max-w-2xl
+              text-3xl
+              font-bold
+              leading-snug
+              tracking-tight
+              text-gray-800
+              dark:text-white
+              lg:text-4xl lg:leading-tight
+            "
           >
             Visi
           </h3>
           <p
-            class="max-w-2xl py-4 text-lg leading-normal text-gray-500 dark:text-gray-300 lg:text-xl xl:text-xl"
-          >
-            You can use this space to highlight your first benefit or a feature
-            of your product. It can also contain an image or Illustration like
-            in the example along with some bullet points.
-          </p>
-          <p
-            class="max-w-2xl py-4 text-lg leading-normal text-gray-500 dark:text-gray-300 lg:text-xl xl:text-xl"
-          >
-            You can use this space to highlight your first benefit or a feature
-            of your product. It can also contain an image or Illustration like
-            in the example along with some bullet points.
-          </p>
+            class="
+              max-w-2xl
+              py-4
+              text-lg
+              leading-normal
+              text-gray-500
+              dark:text-gray-300
+              lg:text-xl
+              xl:text-xl
+            "
+            v-html="vission.vission"
+          ></p>
         </div>
       </div>
     </div>
   </div>
   <div
-    class="container mx-auto mb-6 flex flex-wrap p-8 lg:flex-nowrap lg:gap-10 xl:px-0"
+    class="
+      container
+      mx-auto
+      mb-6
+      flex flex-wrap
+      p-8
+      lg:flex-nowrap lg:gap-10
+      xl:px-0
+    "
   >
     <div class="flex w-full items-center justify-center lg:order-1 lg:w-1/2">
       <div>
@@ -201,101 +259,60 @@ defineProps({
       <div>
         <div class="mt-4 flex w-full flex-col">
           <h3
-            class="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 dark:text-white lg:text-4xl lg:leading-tight"
+            class="
+              mt-3
+              max-w-2xl
+              text-3xl
+              font-bold
+              leading-snug
+              tracking-tight
+              text-gray-800
+              dark:text-white
+              lg:text-4xl lg:leading-tight
+            "
           >
             Misi
           </h3>
           <p
-            class="max-w-2xl py-4 text-lg leading-normal text-gray-500 dark:text-gray-300 lg:text-xl xl:text-xl"
-          >
-            You can use this same layout with a flip image to highlight your
-            rest of the benefits of your product. It can also contain an image
-            or Illustration as above section along with some bullet points.
-          </p>
+            v-if="vission.mission"
+            class="
+              max-w-2xl
+              py-4
+              text-lg
+              leading-normal
+              text-gray-500
+              dark:text-gray-300
+              lg:text-xl
+              xl:text-xl
+            "
+            v-html="vission.mission"
+          ></p>
         </div>
         <div class="mt-5 w-full">
-          <div class="mt-8 flex items-start space-x-3">
+          <div
+            class="mt-8 flex items-center space-x-3"
+            v-for="(detail, index) in vission.details"
+            :key="index"
+          >
             <div
-              class="mt-1 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-md bg-pink-500"
+              class="
+                mt-1
+                flex
+                h-10
+                w-10
+                rounded-md
+                items-center
+                flex-shrink-0
+                bg-pink-500
+                justify-center
+              "
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                class="h-7 w-7 text-pink-50"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                ></path>
-              </svg>
+              <v-icon :name="detail.icon" class="h-7 w-7 text-pink-50" />
             </div>
             <div>
-              <h4 class="text-xl font-medium text-gray-800 dark:text-gray-200">
-                Mobile Responsive Template
+              <h4 class="text-md font-medium text-gray-600 dark:text-gray-200">
+                {{ detail.text }}
               </h4>
-              <p class="mt-1 text-gray-500 dark:text-gray-400">
-                Nextly is designed as a mobile first responsive template.
-              </p>
-            </div>
-          </div>
-          <div class="mt-8 flex items-start space-x-3">
-            <div
-              class="mt-1 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-md bg-pink-500"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                class="h-7 w-7 text-pink-50"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-                ></path>
-              </svg>
-            </div>
-            <div>
-              <h4 class="text-xl font-medium text-gray-800 dark:text-gray-200">
-                Powered by Next.js &amp; TailwindCSS
-              </h4>
-              <p class="mt-1 text-gray-500 dark:text-gray-400">
-                This template is powered by latest technologies and tools.
-              </p>
-            </div>
-          </div>
-          <div class="mt-8 flex items-start space-x-3">
-            <div
-              class="mt-1 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-md bg-pink-500"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                class="h-7 w-7 text-pink-50"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                ></path>
-              </svg>
-            </div>
-            <div>
-              <h4 class="text-xl font-medium text-gray-800 dark:text-gray-200">
-                Dark &amp; Light Mode
-              </h4>
-              <p class="mt-1 text-gray-500 dark:text-gray-400">
-                Nextly comes with a zero-config light &amp; dark mode.
-              </p>
             </div>
           </div>
         </div>
