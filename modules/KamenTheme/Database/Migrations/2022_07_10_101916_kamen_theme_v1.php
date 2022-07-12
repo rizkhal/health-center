@@ -21,16 +21,16 @@ return new class extends Migration {
             $table->commonFields();
         });
 
-        Schema::create('vission_mission', function (Blueprint $table) {
+        Schema::create('setting_vission_mission', function (Blueprint $table) {
             $table->id();
             $table->text('vission');
-            $table->text('mission');
+            $table->text('mission')->nullable()->default(null);
             $table->commonFields();
         });
 
-        Schema::create('vission_mission_details', function (Blueprint $table) {
+        Schema::create('setting_vission_mission_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('vission_mission')->constrained('vission_mission')->onDelete('cascade');
+            $table->foreignId('vission_mission_id')->constrained('setting_vission_mission')->onDelete('cascade');
             $table->string('icon');
             $table->tinyText('text');
             $table->commonFields();
@@ -50,8 +50,8 @@ return new class extends Migration {
     {
         Schema::dropIfExists('setting_hero');
         Schema::dropIfExists('setting_logo');
-        Schema::dropIfExists('vission_mission_details');
-        Schema::dropIfExists('vission_mission');
+        Schema::dropIfExists('setting_vission_mission_details');
+        Schema::dropIfExists('setting_vission_mission');
         Schema::dropIfExists('setting_media_socials');
     }
 };

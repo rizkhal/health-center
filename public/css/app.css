@@ -745,6 +745,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(239 68 68 / var(--tw-ring-opacity));
   --tw-ring-offset-width: 2px;
+}.btn-red:disabled{
+  cursor: not-allowed;
+  opacity: 0.75;
 }.btn-ring-red:focus{
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -1011,6 +1014,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 10vh;
 }.mb-\[100px\]{
   margin-bottom: 100px;
+}.mb-12{
+  margin-bottom: 3rem;
+}.mt-\[22px\]{
+  margin-top: 22px;
 }.block{
   display: block;
 }.inline-block{
