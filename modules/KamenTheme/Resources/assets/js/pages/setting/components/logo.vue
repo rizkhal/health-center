@@ -37,7 +37,7 @@ const submit = () => {
           @input="handleFileUpload($event.target.files[0])"
         />
         <img
-          class="w-40 rounded-md border shadow dark:border-cool-gray-800"
+          class="w-full rounded-md border shadow dark:border-cool-gray-800"
           @click.prevent="$refs.logo.click()"
           :class="{ 'border-red-500': form.errors.logo }"
           :src="

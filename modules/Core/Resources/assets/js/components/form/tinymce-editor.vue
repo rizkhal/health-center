@@ -130,7 +130,24 @@ export default {
       },
     };
   },
-  props: ["value"],
+  props: {
+    value: {
+      type: String,
+      required: false,
+    },
+    label: {
+      type: String,
+      required: false,
+      default: false,
+    },
+    required: {
+      type: Boolean,
+      default: false,
+    },
+    error: {
+      type: String,
+    },
+  },
   computed: {
     newValue: {
       get() {
@@ -145,11 +162,17 @@ export default {
 </script>
 <template>
   <div class="h-full">
+    <label v-if="label" class="form-label mb-1 text-sm capitalize">
+      {{ label }} <span v-if="required" class="text-xs text-red-500">*</span>
+    </label>
+
     <editor
       :init="init"
       :value="value"
       v-model="newValue"
       :initial-value="value"
     />
+
+    <div v-if="error" class="form-error">{{ error }}</div>
   </div>
 </template>

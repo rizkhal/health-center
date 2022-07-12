@@ -24,11 +24,17 @@ const submit = () => {
         v-model="form.title"
         :error="form.errors.title"
       />
-      <v-textarea
-        name="summary"
+      <v-editor
         label="Deskripsi"
+        :value="form.summary"
         v-model="form.summary"
+        style="height: 400px"
         :error="form.errors.summary"
+        @input="
+          (value) => {
+            form.summary = value;
+          }
+        "
       />
     </div>
   </v-form-container>

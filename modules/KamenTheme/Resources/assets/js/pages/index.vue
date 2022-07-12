@@ -26,7 +26,7 @@ defineProps({
             xl:text-6xl xl:leading-tight
           "
         >
-          {{ hero.title }}
+          {{ hero?.title }}
         </h1>
         <p
           class="
@@ -38,9 +38,8 @@ defineProps({
             xl:text-xl
             dark:text-gray-300
           "
-        >
-          {{ hero.summary }}
-        </p>
+          v-html="hero?.summary"
+        ></p>
 
         <div
           class="
@@ -82,7 +81,7 @@ defineProps({
     </div>
   </kamen-container>
 
-  <div
+  <!-- <div
     class="
       p-8
       mt-4
@@ -128,7 +127,8 @@ defineProps({
       startups and indie projects. Its built with Next.js &amp; TailwindCSS. And
       its completely open-source.
     </p>
-  </div>
+  </div> -->
+
   <div
     class="
       p-8
