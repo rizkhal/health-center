@@ -3,6 +3,7 @@
 namespace Modules\Post\Actions;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Modules\Post\Entities\Post;
 use Modules\Post\Http\Requests\PostRequest;
 
@@ -11,7 +12,12 @@ class PostAction
     public static function create(PostRequest $request)
     {
         return DB::transaction(function () use ($request) {
-            Post::create($request->getData());
+            $post = Post::create($request->getData());
+            $post->image()->create([
+                'url' => $request->getThumbnailPath(),
+            ]);
+
+            return $post;
         });
     }
 
@@ -19,6 +25,14 @@ class PostAction
     {
         return DB::transaction(function () use ($post, $request) {
             $post->update($request->getData());
+
+            $post->image()->update([
+                'url' => $request->hasFile('cover')
+                    ? $request->getThumbnailPath()
+                    : Str::after($post->image->url, config('app.url').'/'),
+            ]);
+
+            return $post;
         });
     }
 

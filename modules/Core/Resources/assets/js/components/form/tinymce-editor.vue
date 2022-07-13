@@ -138,7 +138,7 @@ export default {
     label: {
       type: String,
       required: false,
-      default: false,
+      default: null,
     },
     required: {
       type: Boolean,

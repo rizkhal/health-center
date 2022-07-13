@@ -20,7 +20,15 @@ return new class extends Migration {
             $table->string('slug')->unique();
             $table->longText('content');
             $table->foreignUuid('category_id')->nullable();
+            $table->unsignedBigInteger('visitor')->default(0);
             $table->commonFields();
+        });
+
+        Schema::create('imageable', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string('url');
+            $table->foreignUuid('imageable_id');
+            $table->string('imageable_type');
         });
 
         Schema::create('subscribers', function (Blueprint $table) {
@@ -35,6 +43,7 @@ return new class extends Migration {
 
     public function down()
     {
+        Schema::dropIfExists('imageable');
         Schema::dropIfExists('posts');
         Schema::dropIfExists('categories');
         Schema::dropIfExists('subscribers');

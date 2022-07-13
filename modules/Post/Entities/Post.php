@@ -8,10 +8,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Core\Entities\Relations\HasAuthor;
 use Modules\Core\Entities\Traits\HasUuid;
+use Modules\Post\Entities\Traits\Imageable;
 
 class Post extends Model
 {
     use HasUuid,
+        Imageable,
         HasAuthor,
         HasFactory,
         SoftDeletes;

@@ -9,6 +9,7 @@
   "license": "MIT",
   "require": {
     "php": "^8.0",
+    "awssat/laravel-visits": "^3.0",
     "darkaonline/l5-swagger": "^8.1.0",
     "doctrine/dbal": "^3.3",
     "friendsofphp/php-cs-fixer": "^3.7",
