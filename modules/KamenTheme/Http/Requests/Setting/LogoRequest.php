@@ -2,9 +2,9 @@
 
 namespace Modules\KamenTheme\Http\Requests\Setting;
 
-use Illuminate\Support\Str;
 use App\Abstracts\FormRequest;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Str;
 
 class LogoRequest extends FormRequest
 {
@@ -20,7 +20,7 @@ class LogoRequest extends FormRequest
     {
         $path = $this->logo instanceof UploadedFile
             ? $this->file('logo')->store('photos/shares')
-            : Str::after($this->logo, config('app.url') . '/');
+            : Str::after($this->logo, config('app.url').'/');
 
         return [
             'logo' => $path,

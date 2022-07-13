@@ -2,11 +2,11 @@
 
 namespace Modules\Post\Entities;
 
-use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\Model;
-use Modules\Core\Entities\Traits\HasUuid;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Support\Str;
+use Modules\Core\Entities\Traits\HasUuid;
 
 class Image extends Model
 {
@@ -29,9 +29,9 @@ class Image extends Model
             get: fn ($value) => Str::of($value)->whenStartsWith(
                 ['http://', 'https://'],
                 fn ($str) => $str,
-                fn () => config('app.url') . "/{$value}"
+                fn () => config('app.url')."/{$value}"
             ),
-            set: fn ($value) => Str::after($value, config('app.url') . '/')
+            set: fn ($value) => Str::after($value, config('app.url').'/')
         );
     }
 }

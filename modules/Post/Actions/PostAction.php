@@ -2,9 +2,9 @@
 
 namespace Modules\Post\Actions;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Modules\Post\Entities\Post;
-use Illuminate\Support\Facades\DB;
 use Modules\Post\Http\Requests\PostRequest;
 
 class PostAction
@@ -29,7 +29,7 @@ class PostAction
             $post->image()->update([
                 'url' => $request->hasFile('cover')
                     ? $request->getThumbnailPath()
-                    : Str::after($post->image->url, config('app.url') . '/'),
+                    : Str::after($post->image->url, config('app.url').'/'),
             ]);
 
             return $post;

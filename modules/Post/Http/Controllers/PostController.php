@@ -2,13 +2,13 @@
 
 namespace Modules\Post\Http\Controllers;
 
-use Inertia\Response;
-use Illuminate\Support\Str;
-use Modules\Post\Entities\Post;
-use Illuminate\Routing\Controller;
-use Modules\Post\Actions\PostAction;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Str;
+use Inertia\Response;
+use Modules\Post\Actions\PostAction;
 use Modules\Post\Datatable\PostDatatable;
+use Modules\Post\Entities\Post;
 use Modules\Post\Http\Requests\PostRequest;
 
 class PostController extends Controller

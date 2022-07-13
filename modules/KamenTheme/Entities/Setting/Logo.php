@@ -18,7 +18,7 @@ class Logo extends Model
             get: fn ($value) => Str::of($value)->whenStartsWith(
                 ['http://', 'https://'],
                 fn ($str) => $str,
-                fn () => config('app.url') . "/{$value}"
+                fn () => config('app.url')."/{$value}"
             ),
         );
     }
