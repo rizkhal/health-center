@@ -30,7 +30,7 @@ class PostAction
             $post->image()->update([
                 'url' => $request->hasFile('cover')
                     ? $request->getThumbnailPath()
-                    : Str::after($post->image->url, config('app.url') . '/'),
+                    : Str::after($post->image->url, config('app.url').'/'),
             ]);
 
             return $post;

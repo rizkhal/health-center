@@ -36,7 +36,7 @@ class Post extends Model
     {
         static::creating(function (self $model) {
             $model->fill([
-                'slug' => "{$model->slug}-" . time(),
+                'slug' => "{$model->slug}-".time(),
             ]);
         });
     }

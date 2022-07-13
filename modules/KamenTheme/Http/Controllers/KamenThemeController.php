@@ -2,9 +2,9 @@
 
 namespace Modules\KamenTheme\Http\Controllers;
 
+use Illuminate\Routing\Controller;
 use Inertia\Inertia;
 use Inertia\Response;
-use Illuminate\Routing\Controller;
 use Modules\KamenTheme\Entities\Setting\Hero;
 use Modules\KamenTheme\Entities\Setting\Logo;
 use Modules\KamenTheme\Entities\Setting\VissionMission;
@@ -24,7 +24,7 @@ class KamenThemeController extends Controller
     public function article(): Response
     {
         return Inertia::render('KamenTheme::article/index', [
-            'articles' => fn () => Post::query()->with(['author', 'category', 'image'])->latest()->paginate(10)
+            'articles' => fn () => Post::query()->with(['author', 'category', 'image'])->latest()->paginate(10),
         ])->title(__('Halaman Artikel'));
     }
 
