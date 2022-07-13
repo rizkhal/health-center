@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://app.tamaelgrupternate.com'),
+    'url' => env('APP_URL', 'http://health-center.test'),
 
     'asset_url' => env('ASSET_URL', null),
 

@@ -2,18 +2,22 @@
 
 namespace Modules\Post\Http\Controllers;
 
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Routing\Controller;
 use Inertia\Response;
-use Modules\Post\Actions\PostAction;
-use Modules\Post\Datatable\PostDatatable;
+use Illuminate\Support\Str;
 use Modules\Post\Entities\Post;
+use Illuminate\Routing\Controller;
+use Modules\Post\Actions\PostAction;
+use Illuminate\Http\RedirectResponse;
+use Modules\Post\Datatable\PostDatatable;
 use Modules\Post\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
     public function index(): Response
     {
+        // $path = 'http://health-center.test/photos/shares/thumbnails/fK33lLTjLgqg9u4K8uoskl2wexBWXsjXbFzh3J1D.png';
+        // dd(Str::after($path, config('app.url') . '/'));
+
         return inertia('Post::article/index')->inertable(new PostDatatable)->title(__('Manage Post'));
     }
 
@@ -35,7 +39,7 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
-        $post->load('category');
+        $post->load(['category', 'image']);
 
         return inertia('Post::article/edit')->with(['post' => $post])
             ->title(__('Update post'));

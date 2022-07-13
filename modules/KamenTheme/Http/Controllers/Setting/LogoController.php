@@ -15,8 +15,6 @@ class LogoController extends Controller
 
             return back()->success(__('Berhasil mengatur logo aplikasi'));
         } catch (\Throwable $th) {
-            dd($th);
-
             return back()->error(__('Terjadi kesalahan saat mengatur logo'));
         }
     }

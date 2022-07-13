@@ -10,4 +10,9 @@ class FormRequest extends BaseFormRequest
     {
         return true;
     }
+
+    public function isUpdate(): bool
+    {
+        return $this->method() === 'PUT' || $this->method() === 'PATCH';
+    }
 }

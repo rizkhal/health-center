@@ -3,7 +3,7 @@
 namespace Modules\Post\Http\Requests;
 
 use App\Abstracts\FormRequest;
-use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 use Modules\Post\Entities\Category;
 
 class PostRequest extends FormRequest
@@ -20,7 +20,7 @@ class PostRequest extends FormRequest
         return [
             'title' => __('Judul'),
             'category' => __('Kategori'),
-            'cover' => __('Cover'),
+            'cover' => __('Thumbnail'),
         ];
     }
 
@@ -30,8 +30,13 @@ class PostRequest extends FormRequest
             'title' => ['required', 'string'],
             'content' => ['required', 'string'],
             'category' => ['required', 'string'],
-            'cover' => ['required', 'file'],
+            'cover' => ['required'],
         ];
+    }
+
+    public function getThumbnailPath(): string
+    {
+        return $this->file('cover')->store('photos/shares/thumbnails');
     }
 
     public function getData(): array
@@ -43,7 +48,7 @@ class PostRequest extends FormRequest
 
         return array_merge($this->validated(), [
             'category_id' => $category->id,
-            'slug' => Str::of($this->title)->slug('-'),
+            'slug' => $this->slug,
         ]);
     }
 }

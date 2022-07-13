@@ -61,6 +61,11 @@ export default {
 
     // form
     app.component(
+      "v-image-picker",
+      require("~/components/form/image-picker.vue").default,
+    );
+
+    app.component(
       "v-editor",
       require("~/components/form/tinymce-editor").default,
     );
