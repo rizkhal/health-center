@@ -36,7 +36,7 @@ function onPickImage(event) {
 </script>
 <template>
   <div>
-    <div v-if="label" class="form-label text-sm capitalize text-left">
+    <div v-if="label" class="form-label text-left text-sm capitalize">
       {{ label }} <span v-if="required" class="text-xs text-red-500">*</span>
     </div>
     <div class="flex flex-col justify-center">
