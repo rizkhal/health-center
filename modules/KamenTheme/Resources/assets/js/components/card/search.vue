@@ -1,38 +1,18 @@
 <template>
   <div>
-    <div class="flex items-stretch w-full relative mt-2 space-x-1">
+    <div class="relative mt-2 flex w-full items-stretch space-x-1">
       <input
         type="text"
-        class="
-          p-2
-          w-px
-          border-2
-          relative
-          rounded-lg
-          bg-white
-          border-gray-300
-          flex-shrink flex-grow flex-auto
-          focus:outline-none focus:ring-2 focus:ring-pink-500
-        "
+        class="relative w-px flex-auto flex-shrink flex-grow rounded-lg border-2 border-gray-300 bg-white p-2 focus:outline-none focus:ring-2 focus:ring-pink-500"
       />
       <div class="flex">
         <button
-          class="
-            flex
-            items-center
-            leading-normal
-            px-3
-            whitespace-no-wrap
-            text-grey-dark text-sm
-            bg-pink-500
-            rounded-lg
-            focus:ring-2 focus:ring-offset-2 focus:ring-pink-500
-          "
+          class="whitespace-no-wrap text-grey-dark flex items-center rounded-lg bg-pink-500 px-3 text-sm leading-normal focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
         >
           <v-icon
             name="SearchIcon"
             type="outline"
-            class="w-8 h-8 text-pink-200"
+            class="h-8 w-8 text-pink-200"
           />
         </button>
       </div>

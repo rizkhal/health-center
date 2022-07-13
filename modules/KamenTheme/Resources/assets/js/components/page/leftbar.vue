@@ -9,12 +9,7 @@
         <div class="flex flex-row items-center justify-between">
           <a
             href="#"
-            class="
-              font-semibold
-              text-gray-800
-              transition-all
-              hover:text-pink-500
-            "
+            class="font-semibold text-gray-800 transition-all hover:text-pink-500"
           >
             {{ category.name }}
           </a>
