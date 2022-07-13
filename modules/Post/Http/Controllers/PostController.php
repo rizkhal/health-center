@@ -15,9 +15,6 @@ class PostController extends Controller
 {
     public function index(): Response
     {
-        // $path = 'http://health-center.test/photos/shares/thumbnails/fK33lLTjLgqg9u4K8uoskl2wexBWXsjXbFzh3J1D.png';
-        // dd(Str::after($path, config('app.url') . '/'));
-
         return inertia('Post::article/index')->inertable(new PostDatatable)->title(__('Manage Post'));
     }
 

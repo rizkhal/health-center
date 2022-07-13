@@ -32,6 +32,15 @@ class Post extends Model
         return \Modules\Post\Database\factories\PostFactory::new();
     }
 
+    protected static function booted()
+    {
+        static::creating(function (self $model) {
+            $model->fill([
+                'slug' => "{$model->slug}-".time(),
+            ]);
+        });
+    }
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, 'category_id');

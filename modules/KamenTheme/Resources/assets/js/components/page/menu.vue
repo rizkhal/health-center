@@ -10,8 +10,11 @@
   </li>
   <li>
     <v-app-link
-      :href="$route('post.video')"
-      :class="active('KamenTheme::video')"
+      :href="$route('post.article')"
+      :class="
+        active('KamenTheme::article/index') ||
+        active('KamenTheme::article/show')
+      "
       class="flex flex-row items-center p-4 lg:p-0"
     >
       Artikel
@@ -43,6 +46,7 @@ import { usePage } from "@inertiajs/inertia-vue3";
 
 const page = usePage();
 
+// TODO: FIX ACTIVE COMPONENT STATE
 const active = (component) => {
   return {
     "text-pink-500 font-semibold": page.component.value === component,

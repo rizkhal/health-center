@@ -4,23 +4,36 @@ namespace Modules\KamenTheme\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 use Inertia\Inertia;
+use Inertia\Response;
 use Modules\KamenTheme\Entities\Setting\Hero;
 use Modules\KamenTheme\Entities\Setting\Logo;
 use Modules\KamenTheme\Entities\Setting\VissionMission;
+use Modules\Post\Entities\Post;
 
 class KamenThemeController extends Controller
 {
-    public function post()
+    public function post(): Response
     {
         return Inertia::render('KamenTheme::index', [
             'hero' => Hero::first(),
             'logo' => Logo::first(),
             'vission' => VissionMission::with('details')->first(),
-        ])->title(__('Landing Page'));
+        ])->title(__('Halaman Utama'));
     }
 
-    public function video()
+    public function article(): Response
     {
-        return Inertia::render('KamenTheme::video');
+        return Inertia::render('KamenTheme::article/index', [
+            'articles' => fn () => Post::query()->with(['author', 'category', 'image'])->latest()->paginate(10),
+        ])->title(__('Halaman Artikel'));
+    }
+
+    public function showArticle(Post $post): Response
+    {
+        $post->load(['author', 'category', 'image']);
+
+        return Inertia::render('KamenTheme::article/show', [
+            'article' => fn () => $post,
+        ])->title($post->title);
     }
 }

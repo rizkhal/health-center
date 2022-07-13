@@ -1,7 +1,5 @@
 <template>
   <div class="flex flex-col">
-    <kamen-heading title="Category" />
-
     <ul class="flex flex-col rounded-2xl bg-white shadow">
       <li
         v-for="(category, index) in $page.props.categories"
@@ -11,7 +9,12 @@
         <div class="flex flex-row items-center justify-between">
           <a
             href="#"
-            class="font-semibold text-gray-800 transition-all hover:text-pink-500"
+            class="
+              font-semibold
+              text-gray-800
+              transition-all
+              hover:text-pink-500
+            "
           >
             {{ category.name }}
           </a>

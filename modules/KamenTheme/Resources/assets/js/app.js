@@ -57,10 +57,20 @@ export default {
       require("./components/search/modal.vue").default,
     );
 
+    app.component(
+      "kamen-search-card",
+      require("./components/card/search.vue").default,
+    );
+
     // card
     app.component(
       "kamen-video-card",
       require("./components/card/video.vue").default,
+    );
+
+    app.component(
+      "kamen-posts-card",
+      require("./components/card/posts.vue").default,
     );
 
     app.component(
