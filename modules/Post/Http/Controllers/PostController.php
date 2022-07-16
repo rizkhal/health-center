@@ -4,7 +4,6 @@ namespace Modules\Post\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Str;
 use Inertia\Response;
 use Modules\Post\Actions\PostAction;
 use Modules\Post\Datatable\PostDatatable;
