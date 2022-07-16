@@ -9,18 +9,18 @@ const props = defineProps({
   <div class="bg-gray-100">
     <template v-for="(item, index) in filters" :key="index">
       <div
-        class="px-2 lg:px-8 mt-10 pb-4 flex flex-row space-x-1 items-center"
+        class="mt-10 flex flex-row items-center space-x-1 px-2 pb-4 lg:px-8"
         v-if="item"
       >
-        <span class="py-1 px-2 bg-pink-600 text-pink-200 rounded-md">
+        <span class="rounded-md bg-pink-600 py-1 px-2 text-pink-200">
           Filter: {{ item }}
         </span>
         <v-app-link
           :href="$route('post.article')"
           method="get"
-          class="bg-pink-600 px-2 py-1 rounded-md text-pink-200"
+          class="rounded-md bg-pink-600 px-2 py-1 text-pink-200"
         >
-          <v-icon name="XIcon" class="w-4 h-4" />
+          <v-icon name="XIcon" class="h-4 w-4" />
         </v-app-link>
       </div>
     </template>

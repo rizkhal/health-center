@@ -18,12 +18,7 @@ const props = defineProps({
             :href="`${$route('post.article', {
               category: category.name.toLowerCase(),
             })}`"
-            class="
-              font-semibold
-              text-gray-800
-              transition-all
-              hover:text-pink-500
-            "
+            class="font-semibold text-gray-800 transition-all hover:text-pink-500"
             :class="{}"
           >
             {{ category.name }}
