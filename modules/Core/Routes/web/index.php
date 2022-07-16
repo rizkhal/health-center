@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modules\Core\Http\Controllers\SettingController;
 use Modules\Core\Http\Controllers\Backup\BackupController;
+use Modules\Core\Http\Controllers\SettingController;
 
 Route::middleware('auth')->prefix('dashboard')->as('dashboard.')->group(function () {
     Route::get('/', DashboardController::class)->name('dashboard');

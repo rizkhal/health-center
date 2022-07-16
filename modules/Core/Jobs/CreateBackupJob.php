@@ -3,12 +3,12 @@
 namespace Modules\Core\Jobs;
 
 use Illuminate\Bus\Queueable;
-use Modules\Core\Enums\Backup\Option;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Artisan;
+use Modules\Core\Enums\Backup\Option;
 
 class CreateBackupJob implements ShouldQueue
 {

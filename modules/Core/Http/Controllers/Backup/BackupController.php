@@ -2,16 +2,16 @@
 
 namespace Modules\Core\Http\Controllers\Backup;
 
-use Inertia\Response;
 use Illuminate\Http\Request;
-use Modules\Core\Actions\Backup;
 use Illuminate\Routing\Controller;
-use Modules\Core\Enums\Backup\Option;
-use Modules\Core\Jobs\CreateBackupJob;
 use Illuminate\Support\Facades\Artisan;
+use Inertia\Response;
+use Modules\Core\Actions\Backup;
+use Modules\Core\Enums\Backup\Option;
 use Modules\Core\Http\Requests\BackupManualRequest;
-use Spatie\Backup\BackupDestination\BackupDestination;
+use Modules\Core\Jobs\CreateBackupJob;
 use Spatie\Backup\BackupDestination\Backup as SpatieBackup;
+use Spatie\Backup\BackupDestination\BackupDestination;
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 
 class BackupController extends Controller
@@ -39,7 +39,7 @@ class BackupController extends Controller
     {
         $backup = Backup::findBackup($request->path);
 
-        if (!$backup?->exists()) {
+        if (! $backup?->exists()) {
             return back()->error(__('Cadangan tidak ditemukan'));
         }
 
@@ -49,9 +49,7 @@ class BackupController extends Controller
     public function destroy(Request $request)
     {
         try {
-
             $destination = BackupDestination::create('local', config('backup.backup.name'));
-
 
             $destination->backups()->first(
                 fn (SpatieBackup $backup) => $backup->path() === $request->backup_path

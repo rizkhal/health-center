@@ -3,8 +3,8 @@
 namespace Modules\Core\Http\Requests;
 
 use App\Abstracts\FormRequest;
-use Modules\Core\Enums\Backup\Option;
 use Illuminate\Validation\Rules\Enum;
+use Modules\Core\Enums\Backup\Option;
 
 class BackupManualRequest extends FormRequest
 {
