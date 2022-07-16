@@ -172,6 +172,12 @@ const slugable = (string) => {
   return str;
 };
 
+const readableNumber = (num) => {
+  return Math.abs(num) > 999
+    ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + "K"
+    : Math.sign(num) * Math.abs(num);
+};
+
 export {
   daysInMonth,
   formatNumber,
@@ -180,6 +186,7 @@ export {
   shortTimestamp,
   formatDate,
   slugable,
+  readableNumber,
 };
 
 export default {
@@ -190,4 +197,5 @@ export default {
   shortTimestamp,
   formatDate,
   slugable,
+  readableNumber,
 };
