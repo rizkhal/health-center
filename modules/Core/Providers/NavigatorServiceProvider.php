@@ -18,10 +18,13 @@ class NavigatorServiceProvider extends ServiceProvider
                             ->for(route('dashboard.dashboard'))
                             ->heroicon('HomeIcon')
                             ->icon('outline'),
-
                         Nav::item(__('Pengaturan'))
                             ->for(route('dashboard.kamen-theme.setting.index'))
                             ->heroicon('CogIcon')
+                            ->icon('outline'),
+                        Nav::item(__('Cadangan'))
+                            ->for(route('dashboard.backup.index'))
+                            ->heroicon('DatabaseIcon')
                             ->icon('outline'),
                     ],
                 ),
