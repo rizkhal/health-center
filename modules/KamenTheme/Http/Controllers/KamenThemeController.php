@@ -26,9 +26,13 @@ class KamenThemeController extends Controller
     public function article(Request $request): Response
     {
         return Inertia::render('KamenTheme::article/index', [
-            'filters' => $request->all(['category']),
+            'filters' => $request->all(['category', 'search']),
             'articles' => fn () => Post::query()
                 ->with(['author', 'category', 'image'])
+                ->when(
+                    $request->get('search'),
+                    fn (Builder $query, $keyword) => $query->whereLike(['title'], $keyword)
+                )
                 ->when(
                     $request->get('category'),
                     fn (Builder $query, $category) => $query->whereHas(
