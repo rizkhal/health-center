@@ -13,7 +13,7 @@ const props = defineProps({
         v-if="item"
       >
         <span class="rounded-md bg-pink-600 py-1 px-2 text-pink-200">
-          Filter: {{ item }}
+          {{ index }}: {{ item }}
         </span>
         <v-app-link
           :href="$route('post.article')"
