@@ -27,25 +27,11 @@ const sm = computed(() => props.size == "sm");
       }"
     >
       <div
-        class="
-          mt-4
-          flex flex-col
-          justify-between
-          space-y-4
-          md:mt-0 md:flex-row md:space-y-0
-        "
+        class="mt-4 flex flex-col justify-between space-y-4 md:mt-0 md:flex-row md:space-y-0"
       >
         <div>
           <span
-            class="
-              rounded-xl
-              bg-pink-200
-              px-3
-              py-1
-              font-bold
-              uppercase
-              text-pink-500
-            "
+            class="rounded-xl bg-pink-200 px-3 py-1 font-bold uppercase text-pink-500"
             :class="{ 'text-md': lg, 'text-xs': sm }"
           >
             {{ item.category.name }}
@@ -100,12 +86,7 @@ const sm = computed(() => props.size == "sm");
       <div :class="{ 'mt-8': lg, 'mt-3': sm }">
         <v-app-link
           :href="$route('post.show.article', { post: item.slug })"
-          class="
-            font-semibold
-            transition-all
-            leading-relaxed
-            hover:text-pink-500
-          "
+          class="font-semibold leading-relaxed transition-all hover:text-pink-500"
           :class="{
             'text-xl md:text-2xl lg:text-3xl': lg,
             'text-lg': sm,
@@ -117,16 +98,7 @@ const sm = computed(() => props.size == "sm");
     </div>
     <div
       v-if="lg"
-      class="
-        mt-4
-        px-3
-        pb-3
-        space-y-4
-        items-center
-        flex flex-col
-        justify-center
-        md:mt-0 md:flex-row md:justify-between md:space-y-0 md:pb-6
-      "
+      class="mt-4 flex flex-col items-center justify-center space-y-4 px-3 pb-3 md:mt-0 md:flex-row md:justify-between md:space-y-0 md:pb-6"
     >
       <div class="flex flex-row items-center space-x-3">
         <div class="flex-shrink-0">
@@ -146,17 +118,7 @@ const sm = computed(() => props.size == "sm");
         <v-dropdown button-label="Bagikan" position="right">
           <template #button>
             <button
-              class="
-                flex
-                px-5
-                py-3
-                font-medium
-                rounded-2xl
-                items-center
-                text-pink-500
-                bg-pink-500/30
-                focus:ring-2 focus:ring-pink-500 focus:ring-offset-2
-              "
+              class="flex items-center rounded-2xl bg-pink-500/30 px-5 py-3 font-medium text-pink-500 focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
             >
               <v-icon
                 name="ShareIcon"
@@ -167,11 +129,18 @@ const sm = computed(() => props.size == "sm");
             </button>
           </template>
           <template #content>
-            <div class="p-4 flex flex-col space-y-4">
-              <a target="blank" :href="`https://www.facebook.com/sharer/sharer.php?u=${$route('post.show.article', { post: item.slug })}`" class="flex flex-row items-center space-x-2">
+            <div class="flex flex-col space-y-4 p-4">
+              <a
+                target="blank"
+                :href="`https://www.facebook.com/sharer/sharer.php?u=${$route(
+                  'post.show.article',
+                  { post: item.slug },
+                )}`"
+                class="flex flex-row items-center space-x-2"
+              >
                 <svg
                   role="img"
-                  class="w-5 h-5"
+                  class="h-5 w-5"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -181,10 +150,17 @@ const sm = computed(() => props.size == "sm");
                 </svg>
                 <span>Facebook</span>
               </a>
-              <a target="blank" :href="`https://twitter.com/intent/tweet?url=${$route('post.show.article', { post: item.slug })}`" class="flex flex-row items-center space-x-2">
+              <a
+                target="blank"
+                :href="`https://twitter.com/intent/tweet?url=${$route(
+                  'post.show.article',
+                  { post: item.slug },
+                )}`"
+                class="flex flex-row items-center space-x-2"
+              >
                 <svg
                   role="img"
-                  class="w-5 h-5"
+                  class="h-5 w-5"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -195,10 +171,16 @@ const sm = computed(() => props.size == "sm");
                 </svg>
                 <span>Twitter</span>
               </a>
-              <a target="blank" :href="`https://wa.me/?text=${$route('post.show.article', { post: item.slug })}`" class="flex flex-row items-center space-x-2">
+              <a
+                target="blank"
+                :href="`https://wa.me/?text=${$route('post.show.article', {
+                  post: item.slug,
+                })}`"
+                class="flex flex-row items-center space-x-2"
+              >
                 <svg
                   role="img"
-                  class="w-5 h-5"
+                  class="h-5 w-5"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
