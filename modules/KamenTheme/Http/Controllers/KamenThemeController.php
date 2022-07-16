@@ -2,6 +2,7 @@
 
 namespace Modules\KamenTheme\Http\Controllers;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Inertia\Inertia;
@@ -22,10 +23,20 @@ class KamenThemeController extends Controller
         ])->title(__('Halaman Utama'));
     }
 
-    public function article(): Response
+    public function article(Request $request): Response
     {
         return Inertia::render('KamenTheme::article/index', [
-            'articles' => fn () => Post::query()->with(['author', 'category', 'image'])->latest()->paginate(10),
+            'filters' => $request->all(['category']),
+            'articles' => fn () => Post::query()
+                ->with(['author', 'category', 'image'])
+                ->when(
+                    $request->get('category'),
+                    fn (Builder $query, $category) => $query->whereHas(
+                        'category',
+                        fn ($query) => $query->whereName($category)
+                    )
+                )
+                ->latest()->paginate(10),
         ])->title(__('Halaman Artikel'));
     }
 
