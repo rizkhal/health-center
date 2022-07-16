@@ -30,19 +30,14 @@ const destroy = ({ path }) => {
 };
 </script>
 <template>
-  <div class="flex mb-8">
+  <div class="mb-8 flex">
     <button class="btn btn-purple" @click.stop="create">Buat Cadangan</button>
   </div>
 
-  <div class="overflow-x-auto relative">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+  <div class="relative overflow-x-auto">
+    <table class="w-full text-left text-sm text-gray-500 dark:text-gray-400">
       <thead
-        class="
-          text-xs text-gray-700
-          uppercase
-          bg-gray-50
-          dark:bg-gray-700 dark:text-gray-400
-        "
+        class="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400"
       >
         <tr>
           <th scope="col" class="py-3 px-6">Lokasi</th>
@@ -54,7 +49,9 @@ const destroy = ({ path }) => {
       <tbody v-if="!files.length">
         <tr>
           <td colspan="4">
-            <div class="flex flex-col items-center justify-center space-y-1 mt-4">
+            <div
+              class="mt-4 flex flex-col items-center justify-center space-y-1"
+            >
               <v-icon name="InboxIcon" type="outline" class="h-8 w-8" />
               <span>Kosong</span>
             </div>
@@ -63,7 +60,7 @@ const destroy = ({ path }) => {
       </tbody>
       <tbody v-else>
         <tr
-          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+          class="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
           v-for="(file, index) in files"
           :key="index"
         >
@@ -76,10 +73,10 @@ const destroy = ({ path }) => {
                 target="blank"
                 :href="`/dashboard/backup/download/?path=${file.path}`"
               >
-                <v-icon name="DownloadIcon" class="w-4 h-4" />
+                <v-icon name="DownloadIcon" class="h-4 w-4" />
               </a>
               <button @click.stop="destroy(file)">
-                <v-icon name="TrashIcon" class="w-4 h-4" />
+                <v-icon name="TrashIcon" class="h-4 w-4" />
               </button>
             </div>
           </td>
