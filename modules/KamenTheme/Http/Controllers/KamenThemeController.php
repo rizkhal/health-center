@@ -2,14 +2,14 @@
 
 namespace Modules\KamenTheme\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Inertia\Inertia;
 use Inertia\Response;
-use Illuminate\Http\Request;
-use Modules\Post\Entities\Post;
-use Illuminate\Routing\Controller;
 use Modules\KamenTheme\Entities\Setting\Hero;
 use Modules\KamenTheme\Entities\Setting\Logo;
 use Modules\KamenTheme\Entities\Setting\VissionMission;
+use Modules\Post\Entities\Post;
 
 class KamenThemeController extends Controller
 {

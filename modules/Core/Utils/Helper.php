@@ -2,14 +2,14 @@
 
 use Illuminate\Support\Carbon;
 
-if (!function_exists('capitalize')) {
+if (! function_exists('capitalize')) {
     function capitalize(string $string): string
     {
         return ucwords(strtolower($string));
     }
 }
 
-if (!function_exists('format_date')) {
+if (! function_exists('format_date')) {
     function format_date($date)
     {
         if (is_string($date)) {
@@ -18,7 +18,7 @@ if (!function_exists('format_date')) {
     }
 }
 
-if (!function_exists('user')) {
+if (! function_exists('user')) {
     /**
      * Get current user authenticated.
      *
@@ -30,7 +30,7 @@ if (!function_exists('user')) {
     }
 }
 
-if (!function_exists('number_to_roman')) {
+if (! function_exists('number_to_roman')) {
     /**
      * Convert number to roman.
      *
@@ -65,7 +65,7 @@ if (!function_exists('number_to_roman')) {
     }
 }
 
-if (!function_exists('format_number')) {
+if (! function_exists('format_number')) {
     /**
      * Format number.
      *
@@ -78,7 +78,7 @@ if (!function_exists('format_number')) {
     }
 }
 
-if (!function_exists('array_split')) {
+if (! function_exists('array_split')) {
     /**
      * Splice and merge array.
      *
@@ -100,7 +100,7 @@ if (!function_exists('array_split')) {
     }
 }
 
-if (!function_exists('clean_number')) {
+if (! function_exists('clean_number')) {
     /**
      * Clean number from dot.
      *
@@ -113,7 +113,7 @@ if (!function_exists('clean_number')) {
     }
 }
 
-if (!function_exists('file_size_convert')) {
+if (! function_exists('file_size_convert')) {
     /**
      * Converts bytes into human readable file size.
      *
@@ -152,7 +152,7 @@ if (!function_exists('file_size_convert')) {
         foreach ($arBytes as $arItem) {
             if ($bytes >= $arItem['VALUE']) {
                 $result = $bytes / $arItem['VALUE'];
-                $result = str_replace('.', ',', strval(round($result, 2))) . ' ' . $arItem['UNIT'];
+                $result = str_replace('.', ',', strval(round($result, 2))).' '.$arItem['UNIT'];
                 break;
             }
         }
@@ -165,7 +165,7 @@ if (! function_exists('format_readable_number')) {
     function format_readable_number($number)
     {
         if ($number >= 1000) {
-            return round($number / 1000) . "K";   // NB: you will want to round this
+            return round($number / 1000).'K';   // NB: you will want to round this
         } else {
             return $number;
         }
