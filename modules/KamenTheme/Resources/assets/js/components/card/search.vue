@@ -35,32 +35,12 @@ const search = () => {
         name="search"
         v-model="model"
         placeholder="Cari artikel.."
-        class="
-          p-2
-          w-px
-          relative
-          bg-white
-          rounded-lg
-          border-2 border-gray-300
-          flex-auto flex-shrink flex-grow
-          focus:outline-none focus:ring-2 focus:ring-pink-500
-        "
+        class="relative w-px flex-auto flex-shrink flex-grow rounded-lg border-2 border-gray-300 bg-white p-2 focus:outline-none focus:ring-2 focus:ring-pink-500"
       />
       <div class="flex">
         <button
           type="submit"
-          class="
-            whitespace-no-wrap
-            text-grey-dark
-            flex
-            items-center
-            rounded-lg
-            bg-pink-500
-            px-3
-            text-sm
-            leading-normal
-            focus:ring-2 focus:ring-pink-500 focus:ring-offset-2
-          "
+          class="whitespace-no-wrap text-grey-dark flex items-center rounded-lg bg-pink-500 px-3 text-sm leading-normal focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
         >
           <v-icon
             name="SearchIcon"
