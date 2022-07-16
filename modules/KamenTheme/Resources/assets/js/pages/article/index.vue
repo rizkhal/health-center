@@ -6,12 +6,13 @@ export default {
 };
 </script>
 <script setup>
-const props = defineProps({
+defineProps({
   articles: Object,
+  filters: Object,
 });
 </script>
 <template>
-  <kamen-wrapper>
+  <kamen-wrapper :filters="filters">
     <template #main>
       <kamen-posts-card size="lg" :items="articles.data" />
     </template>
