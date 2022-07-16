@@ -22,7 +22,7 @@
     >
 
     @routes
-    
+
     <script
         defer
         src="{{ mix('/js/app.js') }}"
@@ -31,6 +31,12 @@
 
 <body class="font-sans leading-none text-gray-700 antialiased overflow-x-hidden m-0">
     @inertia
+
+    <script
+        id="dsq-count-scr"
+        src="//portal-berita-1.disqus.com/count.js"
+        async
+    ></script>
 </body>
 
 </html>
