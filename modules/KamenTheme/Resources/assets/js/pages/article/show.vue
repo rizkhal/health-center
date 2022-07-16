@@ -3,12 +3,30 @@ import KamenTheme from "Kamen/layouts/kamen.vue";
 
 export default {
   layout: KamenTheme,
+  props: {
+    article: Object,
+  },
+  mounted() {
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    var disqus_config = function () {
+      this.page.url = window.location.pathname; // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = this.article.slug; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    console.log(disqus_config);
+
+    (function () {
+      // DON'T EDIT BELOW THIS LINE
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://portal-berita-1.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  },
 };
-</script>
-<script setup>
-defineProps({
-  article: Object,
-});
 </script>
 <template>
   <kamen-wrapper>
@@ -17,6 +35,7 @@ defineProps({
         <div class="flex flex-col space-y-8">
           <kamen-post-card :item="article" size="lg" />
           <div v-html="article.content"></div>
+          <div id="disqus_thread"></div>
         </div>
       </div>
     </template>

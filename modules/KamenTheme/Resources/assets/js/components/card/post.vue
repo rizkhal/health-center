@@ -46,25 +46,24 @@ const sm = computed(() => props.size == "sm");
           }"
         >
           <li>
-            <button class="flex flex-row items-center text-xl font-bold">
+            <span class="flex flex-row items-center text-xl font-bold">
               <v-icon
                 name="EyeIcon"
                 type="outline"
                 class="mr-2 h-8 w-8 text-gray-500"
               />
               {{ $helper.readableNumber(item.views_count) }}
-            </button>
+            </span>
           </li>
-          <li>
-            <button class="flex flex-row items-center text-xl font-bold">
+          <!-- <li>
+            <span class="flex flex-row items-center text-xl font-bold">
               <v-icon
                 name="ChatAlt2Icon"
                 type="outline"
                 class="mr-2 h-8 w-8 text-gray-500"
               />
-              35k
-            </button>
-          </li>
+            </span>
+          </li> -->
           <!-- <li :class="{ 'inline lg:hidden': sm }">
             <button class="flex flex-row items-center text-xl font-bold">
               <v-icon
