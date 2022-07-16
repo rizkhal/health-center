@@ -21,12 +21,12 @@
       >
         {{ cancelText }}
       </button>
-      <button
+      <v-button
+        :loading="loading"
+        :text="submitText"
         @click.prevent="$emit('onSubmit')"
-        class="btn-purple btn-ring-purple"
       >
-        {{ submitText }}
-      </button>
+      </v-button>
     </div>
   </div>
 </template>

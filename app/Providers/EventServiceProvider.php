@@ -20,9 +20,9 @@ class EventServiceProvider extends ServiceProvider
         \Illuminate\Auth\Events\Login::class => [
             \Modules\Core\Listeners\Auth\SuccessListener::class,
         ],
-        \Spatie\Backup\Events\BackupWasSuccessful::class => [
-            \App\Listeners\Backup\BackupHasSuccessful::class,
-        ],
+        // \Spatie\Backup\Events\BackupWasSuccessful::class => [
+        //     \App\Listeners\Backup\BackupHasSuccessful::class,
+        // ],
     ];
 
     /**
