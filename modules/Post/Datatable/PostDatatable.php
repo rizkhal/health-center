@@ -20,6 +20,7 @@ class PostDatatable extends Inertable
     {
         return [
             Column::make(__('Judul'), 'title')->sortable(),
+            Column::make(__('Dilihat'), 'views_count')->format(fn ($value) => format_readable_number($value))->sortable(),
             Column::make(__('Dibuat'), 'created_at')->sortable(),
             Column::make(__('Kategori'), 'category.name')->sortable()->searchable(),
             Column::make(__('Author'), 'author.username')->sortable(),

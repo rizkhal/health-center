@@ -160,3 +160,14 @@ if (! function_exists('file_size_convert')) {
         return $result;
     }
 }
+
+if (! function_exists('format_readable_number')) {
+    function format_readable_number($number)
+    {
+        if ($number >= 1000) {
+            return round($number / 1000).'K';   // NB: you will want to round this
+        } else {
+            return $number;
+        }
+    }
+}

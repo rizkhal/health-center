@@ -2,6 +2,7 @@
 
 namespace Modules\KamenTheme\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -28,8 +29,10 @@ class KamenThemeController extends Controller
         ])->title(__('Halaman Artikel'));
     }
 
-    public function showArticle(Post $post): Response
+    public function showArticle(Request $request, Post $post): Response
     {
+        $post->readingCounter($request->ip());
+
         $post->load(['author', 'category', 'image']);
 
         return Inertia::render('KamenTheme::article/show', [

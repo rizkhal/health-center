@@ -27,11 +27,25 @@ const sm = computed(() => props.size == "sm");
       }"
     >
       <div
-        class="mt-4 flex flex-col justify-between space-y-4 md:mt-0 md:flex-row md:space-y-0"
+        class="
+          mt-4
+          flex flex-col
+          justify-between
+          space-y-4
+          md:mt-0 md:flex-row md:space-y-0
+        "
       >
         <div>
           <span
-            class="rounded-xl bg-pink-200 px-3 py-1 font-bold uppercase text-pink-500"
+            class="
+              rounded-xl
+              bg-pink-200
+              px-3
+              py-1
+              font-bold
+              uppercase
+              text-pink-500
+            "
             :class="{ 'text-md': lg, 'text-xs': sm }"
           >
             {{ item.category.name }}
@@ -52,7 +66,7 @@ const sm = computed(() => props.size == "sm");
                 type="outline"
                 class="mr-2 h-8 w-8 text-gray-500"
               />
-              1.5m
+              {{ $helper.readableNumber(item.views_count) }}
             </button>
           </li>
           <li>
@@ -65,7 +79,7 @@ const sm = computed(() => props.size == "sm");
               35k
             </button>
           </li>
-          <li :class="{ 'inline lg:hidden': sm }">
+          <!-- <li :class="{ 'inline lg:hidden': sm }">
             <button class="flex flex-row items-center text-xl font-bold">
               <v-icon
                 name="ShareIcon"
@@ -74,7 +88,7 @@ const sm = computed(() => props.size == "sm");
               />
               35k
             </button>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -86,7 +100,12 @@ const sm = computed(() => props.size == "sm");
       <div :class="{ 'mt-8': lg, 'mt-3': sm }">
         <v-app-link
           :href="$route('post.show.article', { post: item.slug })"
-          class="font-semibold leading-relaxed transition-all hover:text-pink-500"
+          class="
+            font-semibold
+            leading-relaxed
+            transition-all
+            hover:text-pink-500
+          "
           :class="{
             'text-xl md:text-2xl lg:text-3xl': lg,
             'text-lg': sm,
@@ -98,7 +117,16 @@ const sm = computed(() => props.size == "sm");
     </div>
     <div
       v-if="lg"
-      class="mt-4 flex flex-col items-center justify-center space-y-4 px-3 pb-3 md:mt-0 md:flex-row md:justify-between md:space-y-0 md:pb-6"
+      class="
+        mt-4
+        flex flex-col
+        items-center
+        justify-center
+        space-y-4
+        px-3
+        pb-3
+        md:mt-0 md:flex-row md:justify-between md:space-y-0 md:pb-6
+      "
     >
       <div class="flex flex-row items-center space-x-3">
         <div class="flex-shrink-0">
@@ -116,7 +144,17 @@ const sm = computed(() => props.size == "sm");
       </div>
       <div>
         <button
-          class="flex items-center rounded-2xl bg-pink-500/30 px-5 py-3 font-medium text-pink-500 focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
+          class="
+            flex
+            items-center
+            rounded-2xl
+            bg-pink-500/30
+            px-5
+            py-3
+            font-medium
+            text-pink-500
+            focus:ring-2 focus:ring-pink-500 focus:ring-offset-2
+          "
         >
           <v-icon
             name="ShareIcon"
