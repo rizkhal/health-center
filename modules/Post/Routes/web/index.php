@@ -9,10 +9,10 @@ Route::middleware(['web', 'auth'])->prefix('post')->as('post.')->group(function 
     Route::resource('/post', PostController::class);
     Route::resource('/category', CategoryController::class);
 
-    Route::controller(PageController::class)->prefix('/page')->as('page.')->group(function() {
-        Route::get('/',  'index')->name('index');
-        Route::get('/facility',  'facility')->name('facility');
-        Route::post('/facility/store',  'submitFacility')->name('submit.facility');
+    Route::controller(PageController::class)->prefix('/page')->as('page.')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/facility', 'facility')->name('facility');
+        Route::post('/facility/store', 'submitFacility')->name('submit.facility');
     });
 
     Route::get('/select/category', [CategoryJsonController::class, 'index']);

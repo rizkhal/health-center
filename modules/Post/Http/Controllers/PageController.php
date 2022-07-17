@@ -2,9 +2,9 @@
 
 namespace Modules\Post\Http\Controllers;
 
-use Inertia\Response;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Inertia\Response;
 use Modules\Post\Entities\Facility;
 
 class PageController extends Controller
@@ -48,22 +48,22 @@ class PageController extends Controller
             __('Fasilitas') => [
                 'icon' => 'XIcon',
                 'url' => route('dashboard.post.page.facility'),
-                'text' => 'Kelola Fasilitas'
+                'text' => 'Kelola Fasilitas',
             ],
             __('Kepuasan Masyarakat') => [
                 'icon' => 'XIcon',
                 'url' => route('dashboard.post.page.facility'),
-                'text' => 'Kelola Fasilitas'
+                'text' => 'Kelola Fasilitas',
             ],
             __('Pelayanan') => [
                 'icon' => 'XIcon',
                 'url' => route('dashboard.post.page.facility'),
-                'text' => 'Kelola Fasilitas'
+                'text' => 'Kelola Fasilitas',
             ],
             __('Informasi') => [
                 'icon' => 'XIcon',
                 'url' => route('dashboard.post.page.facility'),
-                'text' => 'Kelola Fasilitas'
+                'text' => 'Kelola Fasilitas',
             ],
         ];
     }
