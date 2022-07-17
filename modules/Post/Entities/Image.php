@@ -29,7 +29,7 @@ class Image extends Model
             get: fn ($value) => Str::of($value)->whenStartsWith(
                 ['http://', 'https://'],
                 fn ($str) => $str,
-                fn () => config('app.url')."/{$value}"
+                fn () => config('app.url')."/storage/{$value}"
             ),
             set: fn ($value) => Str::after($value, config('app.url'))
         );

@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useForm } from "@inertiajs/inertia-vue3";
 
 const selectedImage = ref(null);
