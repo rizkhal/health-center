@@ -1,11 +1,21 @@
 <template>
   <div :class="$attrs.class">
-    <label class="form-label mb-2 text-sm capitalize" :for="id">{{
-      label
-    }}</label>
+    <label class="form-label mb-2 text-sm capitalize" :for="id">
+      {{ label }} <span v-if="required" class="text-xs text-red-500">*</span>
+    </label>
     <div class="relative mt-1 text-gray-700">
       <div
-        class="pointer-events-none absolute inset-y-0 left-0 flex items-center rounded-tl-md rounded-bl-md bg-gray-200 px-3"
+        class="
+          pointer-events-none
+          absolute
+          inset-y-0
+          left-0
+          flex
+          items-center
+          rounded-tl-md rounded-bl-md
+          bg-gray-200
+          px-3
+        "
         :class="{ ' border border-r-0 border-indigo-400': isFocus }"
       >
         <span class="dark:text-cool-gray-200 text-gray-600"> +62 </span>
@@ -19,7 +29,23 @@
         @keypress="handleKeyPressed"
         @input="$emit('update:modelValue', $event.target.value)"
         :class="[error ? 'border-red-500' : ' border-gray-300']"
-        class="dark:border-cool-gray-500 dark:bg-cool-gray-700 dark:text-cool-gray-300 block w-full rounded border bg-white pl-[60px] pr-12 font-sans leading-normal text-gray-700 outline-none focus:border-indigo-400 focus:ring-0"
+        class="
+          dark:border-cool-gray-500
+          dark:bg-cool-gray-700
+          dark:text-cool-gray-300
+          block
+          w-full
+          rounded
+          border
+          bg-white
+          pl-[60px]
+          pr-12
+          font-sans
+          leading-normal
+          text-gray-700
+          outline-none
+          focus:border-indigo-400 focus:ring-0
+        "
       />
     </div>
     <div v-if="error" class="form-error">{{ error }}</div>
@@ -37,6 +63,10 @@ export default {
       default() {
         return `text-input-${uuid()}`;
       },
+    },
+    required: {
+      type: Boolean,
+      default: () => false,
     },
     error: String,
     label: String,

@@ -47,11 +47,11 @@ const save = () => {
 </script>
 <template>
   <v-form-container title="Visi &#38; Misi" @onSubmit="save">
-    <div class="mb-12 flex flex-col space-y-14">
+    <div class="my-12 flex flex-row space-x-4">
       <v-editor
         label="Visi"
         :value="form.vission"
-        style="height: 400px"
+        style="height: 400px; width: 100%"
         :error="form.errors.vission"
         @input="
           (value) => {
@@ -63,7 +63,7 @@ const save = () => {
       <v-editor
         label="Misi"
         :value="form.mission"
-        style="height: 400px"
+        style="height: 400px; width: 100%"
         :error="form.errors.mission"
         @input="
           (value) => {

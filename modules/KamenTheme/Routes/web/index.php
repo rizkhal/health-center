@@ -2,19 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 use Modules\KamenTheme\Http\Controllers\KamenThemeController;
-use Modules\KamenTheme\Http\Controllers\Setting\HeroController;
-use Modules\KamenTheme\Http\Controllers\Setting\LogoController;
 use Modules\KamenTheme\Http\Controllers\SettingController;
-use Modules\KamenTheme\Http\Controllers\VissionMissionController;
 use Modules\KamenTheme\Http\Middleware\HandleKamenThemeInertiaRequest;
 
 Route::prefix('dashboard')->as('dashboard.')->middleware('auth')->group(function () {
     Route::prefix('/kamen-theme')->as('kamen-theme.')->group(function () {
-        Route::prefix('/setting')->as('setting.')->group(function () {
-            Route::get('/', [SettingController::class, 'index'])->name('index');
-            Route::post('/hero', HeroController::class)->name('hero');
-            Route::post('/logo', LogoController::class)->name('logo');
-            Route::post('/vission-mission', VissionMissionController::class)->name('vission-misson');
+        Route::controller(SettingController::class)->prefix('/setting')->as('setting.')->group(function () {
+            Route::get('/', 'index')->name('index');
+            Route::post('/hero', 'hero')->name('hero');
+            Route::post('/logo', 'logo')->name('logo');
+            Route::post('/media-social', 'mediaSocial')->name('media-social');
+            Route::post('/vission-mission', 'vm')->name('vission-misson');
+            Route::post('/address', 'address')->name('address');
         });
     });
 });
