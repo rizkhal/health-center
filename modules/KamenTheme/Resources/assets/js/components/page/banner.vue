@@ -35,7 +35,7 @@ const icons = ({ type }) => {
             v-for="(account, index) in mediaSocials"
             :key="index"
           >
-            <span v-html="icons(account)" class="w-6 h-6 text-white"></span>
+            <span v-html="icons(account)" class="h-6 w-6 text-white"></span>
             <p class="ml-2 truncate font-medium text-white">
               <span> {{ account.name }} </span>
             </p>
