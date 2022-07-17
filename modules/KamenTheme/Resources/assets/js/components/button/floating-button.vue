@@ -8,21 +8,7 @@ const props = defineProps({
     <a
       :href="whatsapp.url"
       target="blank"
-      class="
-        fixed
-        right-5
-        bottom-5
-        flex flex-row
-        items-center
-        rounded-full
-        bg-green-500/80
-        p-4
-        text-white
-        focus:ring-2
-        focus:ring-green-500/80
-        focus:ring-offset-2
-        focus:ring-offset-current
-      "
+      class="fixed right-5 bottom-5 flex flex-row items-center rounded-full bg-green-500/80 p-4 text-white focus:ring-2 focus:ring-green-500/80 focus:ring-offset-2 focus:ring-offset-current"
     >
       <svg
         class="h-10 w-10"

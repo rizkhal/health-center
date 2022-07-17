@@ -37,7 +37,9 @@ const props = defineProps({
       <div>
         <kamen-floating-button
           :whatsapp="
-            media_socials.filter((v) => v.type === MEDIA_SOCIAL.WHATSAPP.value)[0]
+            media_socials.filter(
+              (v) => v.type === MEDIA_SOCIAL.WHATSAPP.value,
+            )[0]
           "
         />
         <!-- only show if user is authenticated -->
