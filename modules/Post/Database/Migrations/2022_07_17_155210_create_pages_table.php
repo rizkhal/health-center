@@ -28,7 +28,7 @@ return new class extends Migration {
         Schema::create('informations', function (Blueprint $table) {
             $table->id();
             $table->longText('content');
-            $table->timestamps();
+            $table->commonFields();
         });
     }
 

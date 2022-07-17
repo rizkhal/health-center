@@ -11,5 +11,5 @@ class Information extends Model
 
     protected $table = 'informations';
 
-    protected $guarded = [];
+    protected $fillable = ['content'];
 }

@@ -25,7 +25,10 @@ Route::prefix('/post')->as('post.')->middleware(HandleKamenThemeInertiaRequest::
         // article
         Route::get('/article', 'article')->name('article');
         Route::get('/article/{post:slug}', 'showArticle')->name('show.article');
-        // facility
+        // ...
         Route::get('/facility', 'facility')->name('facility');
+        Route::get('/satisfaction', 'satisfaction')->name('satisfaction');
+        Route::get('/service', 'service')->name('service');
+        Route::get('/information', 'information')->name('information');
     });
 });

@@ -23,24 +23,36 @@
   <li>
     <v-app-link
       :href="$route('post.facility')"
-      :class="active('KamenTheme::facility/index')"
+      :class="active('KamenTheme::page/facility')"
       class="flex flex-row items-center p-4 lg:p-0"
     >
       Fasilitas
     </v-app-link>
   </li>
   <li>
-    <v-app-link href="#" class="flex flex-row items-center p-4 lg:p-0">
+    <v-app-link
+      :href="$route('post.satisfaction')"
+      :class="active('KamenTheme::page/satisfaction')"
+      class="flex flex-row items-center p-4 lg:p-0"
+    >
       Kepuasan Masyarakat
     </v-app-link>
   </li>
   <li>
-    <v-app-link href="#" class="flex flex-row items-center p-4 lg:p-0">
+    <v-app-link
+      :href="$route('post.service')"
+      :class="active('KamenTheme::page/service')"
+      class="flex flex-row items-center p-4 lg:p-0"
+    >
       Pelayanan
     </v-app-link>
   </li>
   <li>
-    <v-app-link href="#" class="flex flex-row items-center p-4 lg:p-0">
+    <v-app-link
+      :href="$route('post.information')"
+      :class="active('KamenTheme::page/information')"
+      class="flex flex-row items-center p-4 lg:p-0"
+    >
       Informasi
     </v-app-link>
   </li>

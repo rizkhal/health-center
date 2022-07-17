@@ -11,5 +11,5 @@ class Satisfaction extends Model
 
     protected $table = 'satisfactions';
 
-    protected $guarded = [];
+    protected $fillable = ['content'];
 }

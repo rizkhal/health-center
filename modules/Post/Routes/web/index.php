@@ -11,8 +11,22 @@ Route::middleware(['web', 'auth'])->prefix('post')->as('post.')->group(function 
 
     Route::controller(PageController::class)->prefix('/page')->as('page.')->group(function () {
         Route::get('/', 'index')->name('index');
+
+        // fasilitas
         Route::get('/facility', 'facility')->name('facility');
         Route::post('/facility/store', 'submitFacility')->name('submit.facility');
+
+        // kepuasan masyarakat
+        Route::get('/satisfaction', 'satisfaction')->name('satisfaction');
+        Route::post('/satisfaction/store', 'submitSatisfaction')->name('submit.satisfaction');
+
+        // pelayanan
+        Route::get('/service', 'service')->name('service');
+        Route::post('/service/store', 'submitService')->name('submit.service');
+
+        // informasi
+        Route::get('/information', 'information')->name('information');
+        Route::post('/information/store', 'submitInformation')->name('submit.information');
     });
 
     Route::get('/select/category', [CategoryJsonController::class, 'index']);
