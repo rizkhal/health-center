@@ -5,7 +5,7 @@ const props = defineProps({
   facility: Object,
 });
 const form = useForm({
-  content: props.facility,
+  content: props.facility?.content,
 });
 
 const submit = () => {
@@ -19,7 +19,7 @@ const submit = () => {
         :required="true"
         label="Fasilitas"
         v-model="form.content"
-        :value="facility.content"
+        :value="facility?.content"
         style="height: 700px"
         @input="
           (value) => {
