@@ -2,11 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use Modules\Post\Http\Controllers\Api\CategoryJsonController;
+use Modules\Post\Http\Controllers\PageController;
 use Modules\Post\Http\Controllers\SettingController;
 
 Route::middleware(['web', 'auth'])->prefix('post')->as('post.')->group(function () {
     Route::resource('/post', PostController::class);
     Route::resource('/category', CategoryController::class);
+    Route::get('/page',  PageController::class)->name('page');
 
     Route::get('/select/category', [CategoryJsonController::class, 'index']);
     Route::get('/subscriber', SubscriberController::class)->name('subscriber.index');

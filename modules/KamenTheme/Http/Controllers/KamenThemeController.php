@@ -54,4 +54,9 @@ class KamenThemeController extends Controller
             'article' => fn () => $post,
         ])->title($post->title);
     }
+
+    public function facility(): Response
+    {
+        return inertia('KamenTheme::facility/index')->title(__('Fasilitas'));
+    }
 }

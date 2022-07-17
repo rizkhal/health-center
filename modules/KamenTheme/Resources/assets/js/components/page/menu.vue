@@ -21,7 +21,11 @@
     </v-app-link>
   </li>
   <li>
-    <v-app-link href="#" class="flex flex-row items-center p-4 lg:p-0">
+    <v-app-link
+      :href="$route('post.facility')"
+      :class="active('KamenTheme::facility/index')"
+      class="flex flex-row items-center p-4 lg:p-0"
+    >
       Fasilitas
     </v-app-link>
   </li>
