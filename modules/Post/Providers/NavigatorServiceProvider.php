@@ -23,7 +23,7 @@ class NavigatorServiceProvider extends ServiceProvider
                             ->heroicon('TagIcon')
                             ->icon('outline'),
                         Nav::item(__('Halaman'))
-                            ->for(route('dashboard.post.page'))
+                            ->for(route('dashboard.post.page.index'))
                             ->heroicon('CollectionIcon')
                             ->icon('outline'),
                     ]
