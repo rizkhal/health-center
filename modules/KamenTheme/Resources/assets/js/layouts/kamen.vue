@@ -2,6 +2,7 @@
 const props = defineProps({
   title: String,
   logo: Object,
+  media_socials: Object,
 });
 </script>
 <template>
@@ -9,7 +10,7 @@ const props = defineProps({
     <v-app-head :title="title" />
 
     <div class="bg-gray-100">
-      <kamen-banner />
+      <kamen-banner :media-socials="media_socials" />
 
       <!-- page header -->
       <kamen-header :logo="logo" />

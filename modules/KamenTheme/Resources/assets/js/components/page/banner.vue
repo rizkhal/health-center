@@ -1,75 +1,47 @@
+<script setup>
+import { onMounted } from "vue";
+import { MEDIA_SOCIAL } from "../../utils/enum";
+
+defineEmits(["toggle"]);
+
+const props = defineProps({
+  mediaSocials: Object,
+});
+
+const icons = ({ type }) => {
+  switch (type) {
+    case MEDIA_SOCIAL.FACEBOOK.value:
+      return MEDIA_SOCIAL.FACEBOOK.icon;
+    case MEDIA_SOCIAL.TWITTER.value:
+      return MEDIA_SOCIAL.TWITTER.icon;
+    case MEDIA_SOCIAL.WHATSAPP.value:
+      return MEDIA_SOCIAL.WHATSAPP.icon;
+    case MEDIA_SOCIAL.EMAIL.value:
+      return MEDIA_SOCIAL.EMAIL.icon;
+    case MEDIA_SOCIAL.INSTAGRAM.value:
+      return MEDIA_SOCIAL.INSTAGRAM.icon;
+  }
+};
+</script>
 <template>
   <div class="bg-pink-600">
     <div class="py-3 px-3 sm:px-6 lg:px-8">
       <div class="flex flex-wrap items-center justify-between">
-        <ul class="flex w-0 flex-1 items-center space-x-4">
-          <li class="flex items-center">
-            <v-icon name="MailIcon" type="outline" class="h-6 w-6 text-white" />
-            <p class="ml-2 truncate font-medium text-white">
-              <span> support@mail.com </span>
-            </p>
-          </li>
-          <li class="hidden items-center lg:flex">
-            <v-icon name="MailIcon" type="outline" class="h-6 w-6 text-white" />
-            <p class="ml-2 truncate font-medium text-white">
-              <span> support@mail.com </span>
-            </p>
-          </li>
-          <li class="hidden items-center lg:flex">
-            <v-icon name="MailIcon" type="outline" class="h-6 w-6 text-white" />
-            <p class="ml-2 truncate font-medium text-white">
-              <span> support@mail.com </span>
-            </p>
-          </li>
-        </ul>
-        <!-- <div
-          class="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto"
-        >
+        <div class="flex w-0 flex-1 items-center space-x-4">
           <a
-            href="#"
-            class="
-              flex
-              items-center
-              justify-center
-              px-4
-              py-2
-              border border-transparent
-              rounded-md
-              shadow-sm
-              text-sm
-              font-medium
-              text-pink-600
-              bg-white
-              hover:bg-pink-50
-            "
+            :href="account.url"
+            target="blank"
+            class="flex items-center"
+            v-for="(account, index) in mediaSocials"
+            :key="index"
           >
-            Learn more
+            <span v-html="icons(account)" class="w-6 h-6 text-white"></span>
+            <p class="ml-2 truncate font-medium text-white">
+              <span> {{ account.name }} </span>
+            </p>
           </a>
         </div>
-        <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
-          <button
-            type="button"
-            @click.prevent="$emit('toggle')"
-            class="
-              -mr-1
-              flex
-              p-2
-              rounded-md
-              hover:bg-pink-500
-              focus:outline-none focus:ring-2 focus:ring-white
-              sm:-mr-2
-            "
-          >
-            <span class="sr-only">Dismiss</span>
-            <v-icon name="XIcon" type="solid" class="w-6 h-6 text-white" />
-          </button>
-        </div> -->
       </div>
     </div>
   </div>
 </template>
-<script>
-export default {
-  emits: ["toggle"],
-};
-</script>
