@@ -1,4 +1,6 @@
 <script setup>
+import { MEDIA_SOCIAL } from "../utils/enum";
+
 const props = defineProps({
   title: String,
   logo: Object,
@@ -33,7 +35,11 @@ const props = defineProps({
       <kamen-search-modal />
 
       <div>
-        <kamen-floating-button />
+        <kamen-floating-button
+          :whatsapp="
+            media_socials.filter((v) => v.type === MEDIA_SOCIAL.WHATSAPP.value)[0]
+          "
+        />
         <!-- only show if user is authenticated -->
         <!-- <kamen-button-dashboard v-if="$page.props.auth.user" /> -->
       </div>
