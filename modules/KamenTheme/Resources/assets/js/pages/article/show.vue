@@ -42,13 +42,7 @@ export default {
         <!-- <PageHeading title="Related News" right-text="See All" /> -->
 
         <div class="flex flex-col space-y-4">
-          <!-- <SubscribeNewsLatter class="mb-4" /> -->
-
-          <!-- <CardPost
-            v-for="(item, index) in Array.from({ length: 4 })"
-            :key="index"
-            size="sm"
-          /> -->
+          <kamen-search-card class="mb-4" />
         </div>
       </div>
     </template>
