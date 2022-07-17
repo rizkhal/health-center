@@ -2,13 +2,13 @@
 
 namespace Modules\Post\Http\Controllers;
 
-use Inertia\Response;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\Post\Entities\Service;
+use Inertia\Response;
 use Modules\Post\Entities\Facility;
 use Modules\Post\Entities\Information;
 use Modules\Post\Entities\Satisfaction;
+use Modules\Post\Entities\Service;
 
 class PageController extends Controller
 {
