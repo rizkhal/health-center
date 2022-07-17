@@ -9,8 +9,8 @@ const props = defineProps({
 });
 
 const form = useForm({
-  logo: props.logo?.logo,
-  logo_alt: props.logo?.logo_alternative,
+  logo: props?.logo?.logo,
+  logo_alt: props?.logo?.logo_alternative,
 });
 
 function handleFileUpload(file) {

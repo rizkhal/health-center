@@ -31,7 +31,7 @@ class Image extends Model
                 fn ($str) => $str,
                 fn () => config('app.url')."/{$value}"
             ),
-            set: fn ($value) => Str::after($value, config('app.url').'/storage/')
+            set: fn ($value) => Str::after($value, config('app.url'))
         );
     }
 }
