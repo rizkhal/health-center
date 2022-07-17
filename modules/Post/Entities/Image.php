@@ -31,7 +31,7 @@ class Image extends Model
                 fn ($str) => $str,
                 fn () => Str::contains($value, 'storage') ? "/{$value}" : config('app.url')."/storage/{$value}"
             ),
-            set: fn ($value) => Str::after($value, config('app.url'))
+            set: fn ($value) => Str::after("{$value}/", config('app.url'))
         );
     }
 }
