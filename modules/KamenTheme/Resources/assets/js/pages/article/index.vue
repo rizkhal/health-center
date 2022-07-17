@@ -14,7 +14,7 @@ defineProps({
 <template>
   <kamen-wrapper :filters="filters">
     <template #main>
-      <div v-if="articles.data.length">
+      <div v-if="articles.data.length" class="flex flex-col space-y-4">
         <kamen-posts-card size="lg" :items="articles.data" />
       </div>
       <div v-else>

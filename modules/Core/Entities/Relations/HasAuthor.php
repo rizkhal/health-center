@@ -20,15 +20,15 @@ trait HasAuthor
     public static function bootHasAuthor(): void
     {
         static::creating(function (Model $model) {
-            $model->fill(['created_by' => user()->id]);
+            $model->fill(['created_by' => user()?->id]);
         });
 
         static::updating(function (Model $model) {
-            $model->fill(['updated_by' => user()->id]);
+            $model->fill(['updated_by' => user()?->id]);
         });
 
         static::deleting(function (Model $model) {
-            $model->update(['deleted_by' => user()->id]);
+            $model->update(['deleted_by' => user()?->id]);
         });
     }
 

@@ -3,7 +3,6 @@
 namespace Modules\KamenTheme\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\DB;
 use Inertia\Response;
 use Modules\KamenTheme\Actions\SettingAction;
 use Modules\KamenTheme\Entities\Setting\Hero;

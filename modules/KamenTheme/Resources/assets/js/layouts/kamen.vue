@@ -47,7 +47,7 @@ const props = defineProps({
       </div>
 
       <!-- page footer -->
-      <kamen-footer />
+      <kamen-footer :socials="media_socials" />
     </div>
   </div>
 </template>

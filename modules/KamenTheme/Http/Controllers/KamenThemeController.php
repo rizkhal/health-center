@@ -10,6 +10,7 @@ use Inertia\Response;
 use Modules\KamenTheme\Entities\Setting\Hero;
 use Modules\KamenTheme\Entities\Setting\Logo;
 use Modules\KamenTheme\Entities\Setting\VissionMission;
+use Modules\Post\Entities\Facility;
 use Modules\Post\Entities\Post;
 
 class KamenThemeController extends Controller
@@ -53,5 +54,12 @@ class KamenThemeController extends Controller
         return Inertia::render('KamenTheme::article/show', [
             'article' => fn () => $post,
         ])->title($post->title);
+    }
+
+    public function facility(): Response
+    {
+        return inertia('KamenTheme::facility/index', [
+            'facility' => Facility::first(),
+        ])->title(__('Fasilitas'));
     }
 }
