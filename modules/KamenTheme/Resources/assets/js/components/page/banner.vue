@@ -37,9 +37,9 @@ const icons = ({ type }) => {
           >
             <span
               v-html="icons(account)"
-              class="w-3 h-3 md:h-6 md:w-6 text-white"
+              class="h-3 w-3 text-white md:h-6 md:w-6"
             ></span>
-            <p class="ml-2 truncate font-medium text-white hidden lg:block">
+            <p class="ml-2 hidden truncate font-medium text-white lg:block">
               <span> {{ account.name }} </span>
             </p>
           </a>
