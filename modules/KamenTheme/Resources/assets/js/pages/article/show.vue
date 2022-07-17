@@ -15,8 +15,6 @@ export default {
       this.page.identifier = this.article.slug; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 
-    console.log(disqus_config);
-
     (function () {
       // DON'T EDIT BELOW THIS LINE
       var d = document,
