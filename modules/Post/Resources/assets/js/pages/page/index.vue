@@ -9,7 +9,7 @@ defineProps({
       <div
         v-for="(page, index) in pages"
         :key="index"
-        class="bg-white p-4 rounded-md shadow"
+        class="rounded-md bg-white p-4 shadow"
       >
         <h1>
           <v-app-link :href="page.url">{{ index }}</v-app-link>

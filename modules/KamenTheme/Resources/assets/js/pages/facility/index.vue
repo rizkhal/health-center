@@ -11,9 +11,9 @@ defineProps({
 });
 </script>
 <template>
-  <div class="bg-gray-100 p-10 mx-auto">
-    <div class="flex flex-col space-y-8 content justify-center items-center">
-      <h1 class="text-2xl font-semibold mb-8">FASILITAS</h1>
+  <div class="mx-auto bg-gray-100 p-10">
+    <div class="content flex flex-col items-center justify-center space-y-8">
+      <h1 class="mb-8 text-2xl font-semibold">FASILITAS</h1>
       <div v-html="facility.content"></div>
     </div>
   </div>

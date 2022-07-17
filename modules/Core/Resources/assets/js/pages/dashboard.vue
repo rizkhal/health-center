@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="px-6 mx-auto grid">
-      <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-2">
-        <div class="flex items-center p-4 bg-white rounded-lg shadow">
-          <div class="p-3 mr-4 text-blue-500 bg-blue-100 rounded-full">
+    <div class="mx-auto grid px-6">
+      <div class="mb-8 grid gap-6 md:grid-cols-2 xl:grid-cols-2">
+        <div class="flex items-center rounded-lg bg-white p-4 shadow">
+          <div class="mr-4 rounded-full bg-blue-100 p-3 text-blue-500">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -26,8 +26,8 @@
             </p>
           </div>
         </div>
-        <div class="flex items-center p-4 bg-white rounded-lg shadow">
-          <div class="p-3 mr-4 text-green-500 bg-green-100 rounded-full">
+        <div class="flex items-center rounded-lg bg-white p-4 shadow">
+          <div class="mr-4 rounded-full bg-green-100 p-3 text-green-500">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
