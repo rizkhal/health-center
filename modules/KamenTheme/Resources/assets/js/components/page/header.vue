@@ -1,6 +1,15 @@
 <template>
   <div
-    class="grid grid-cols-2 items-center gap-4 bg-white py-4 px-2 shadow lg:grid-cols-12 lg:px-8"
+    class="
+      grid grid-cols-2
+      items-center
+      gap-4
+      bg-white
+      py-4
+      px-2
+      shadow
+      lg:grid-cols-12 lg:px-8
+    "
   >
     <div class="lg:col-span-2">
       <v-app-link :href="$route('post.home')" class="text-2xl font-bold">
@@ -9,7 +18,14 @@
     </div>
     <div class="ml-auto inline lg:hidden">
       <button
-        class="rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
+        class="
+          rounded-md
+          p-2
+          focus:outline-none
+          focus:ring-2
+          focus:ring-pink-500
+          focus:ring-offset-2
+        "
         @click.prevent="state.toggle"
       >
         <svg
@@ -38,10 +54,9 @@
     :class="[state.open ? 'flex flex-col' : 'hidden']"
     class="divide-y divide-gray-200 border-t bg-white shadow lg:hidden"
   >
-    <div class="p-4">
-      <!-- search button -->
+    <!-- <div class="p-4">
       <kamen-search-button class="w-full" @click.prevent="search.toggle" />
-    </div>
+    </div> -->
 
     <ul class="flex flex-col divide-y divide-gray-200">
       <kamen-page-menu />
