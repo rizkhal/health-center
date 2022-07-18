@@ -42,14 +42,14 @@
     <v-dropdown position="right">
       <template #button="{ open }">
         <div
-          :class="{ 'text-pink-500 font-semibold': open }"
+          :class="{ 'font-semibold text-pink-500': open }"
           class="flex flex-row items-center p-4 lg:p-0"
         >
           Informasi
         </div>
       </template>
       <template #content>
-        <div class="flex flex-col space-y-4 p-4 w-full">
+        <div class="flex w-full flex-col space-y-4 p-4">
           <a href="#">Hipertensi</a>
           <a href="#">PHBS</a>
           <a href="#">Jadwal Pelayanan</a>

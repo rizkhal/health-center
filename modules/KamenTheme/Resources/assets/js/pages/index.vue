@@ -16,64 +16,28 @@ const props = defineProps({
     <div class="flex w-full items-center lg:w-1/2">
       <div class="mb-8 max-w-2xl">
         <h1
-          class="
-            text-lg
-            font-bold
-            leading-snug
-            tracking-tight
-            text-gray-800
-            dark:text-white
-            md:text-4xl
-            lg:text-4xl lg:leading-tight
-            xl:text-6xl xl:leading-tight
-          "
+          class="text-lg font-bold leading-snug tracking-tight text-gray-800 dark:text-white md:text-4xl lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight"
         >
           {{ hero?.title }}
         </h1>
         <p
-          class="
-            md:text-md
-            lg:text-md
-            py-5
-            text-sm
-            leading-normal
-            text-gray-500
-            dark:text-gray-300
-            xl:text-xl
-          "
+          class="md:text-md lg:text-md py-5 text-sm leading-normal text-gray-500 dark:text-gray-300 xl:text-xl"
           v-html="hero?.summary"
         ></p>
 
         <div
-          class="
-            flex flex-col
-            items-start
-            space-y-3
-            sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0
-          "
+          class="flex flex-col items-start space-y-3 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0"
         >
           <v-app-link
             :href="$route('post.service')"
             target="_blank"
             rel="noopener"
-            class="
-              flex
-              items-center
-              rounded-md
-              bg-pink-600
-              px-2
-              py-1
-              text-xs
-              lg:px-6 lg:py-3 lg:text-lg
-              text-center
-              lg:font-bold
-              text-white
-            "
+            class="flex items-center rounded-md bg-pink-600 px-2 py-1 text-center text-xs text-white lg:px-6 lg:py-3 lg:text-lg lg:font-bold"
           >
             Pelayanan
             <v-icon
               name="ArrowSmRightIcon"
-              class="ml-2 w-3 h-3 lg:h-6 lg:w-6"
+              class="ml-2 h-3 w-3 lg:h-6 lg:w-6"
             />
           </v-app-link>
         </div>
@@ -138,15 +102,7 @@ const props = defineProps({
   </div> -->
 
   <div
-    class="
-      container
-      mx-auto
-      mb-6
-      flex flex-wrap
-      p-8
-      lg:flex-nowrap lg:gap-10
-      xl:px-0
-    "
+    class="container mx-auto mb-6 flex flex-wrap p-8 lg:flex-nowrap lg:gap-10 xl:px-0"
   >
     <div class="flex w-full items-center justify-center lg:w-1/2">
       <img
@@ -165,31 +121,12 @@ const props = defineProps({
       <div>
         <div class="mt-4 flex w-full flex-col">
           <h3
-            class="
-              mt-3
-              max-w-2xl
-              text-3xl
-              font-bold
-              leading-snug
-              tracking-tight
-              text-gray-800
-              dark:text-white
-              lg:text-4xl lg:leading-tight
-            "
+            class="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 dark:text-white lg:text-4xl lg:leading-tight"
           >
             Visi
           </h3>
           <p
-            class="
-              max-w-2xl
-              py-4
-              text-lg
-              leading-normal
-              text-gray-500
-              dark:text-gray-300
-              lg:text-xl
-              xl:text-xl
-            "
+            class="max-w-2xl py-4 text-lg leading-normal text-gray-500 dark:text-gray-300 lg:text-xl xl:text-xl"
             v-html="vission.vission"
           ></p>
         </div>
@@ -197,15 +134,7 @@ const props = defineProps({
     </div>
   </div>
   <div
-    class="
-      container
-      mx-auto
-      mb-6
-      flex flex-wrap
-      p-8
-      lg:flex-nowrap lg:gap-10
-      xl:px-0
-    "
+    class="container mx-auto mb-6 flex flex-wrap p-8 lg:flex-nowrap lg:gap-10 xl:px-0"
   >
     <div class="flex w-full items-center justify-center lg:order-1 lg:w-1/2">
       <div>
@@ -266,32 +195,13 @@ const props = defineProps({
       <div>
         <div class="mt-4 flex w-full flex-col">
           <h3
-            class="
-              mt-3
-              max-w-2xl
-              text-3xl
-              font-bold
-              leading-snug
-              tracking-tight
-              text-gray-800
-              dark:text-white
-              lg:text-4xl lg:leading-tight
-            "
+            class="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 dark:text-white lg:text-4xl lg:leading-tight"
           >
             Misi
           </h3>
           <p
             v-if="vission.mission"
-            class="
-              max-w-2xl
-              py-4
-              text-lg
-              leading-normal
-              text-gray-500
-              dark:text-gray-300
-              lg:text-xl
-              xl:text-xl
-            "
+            class="max-w-2xl py-4 text-lg leading-normal text-gray-500 dark:text-gray-300 lg:text-xl xl:text-xl"
             v-html="vission.mission"
           ></p>
         </div>
@@ -302,17 +212,7 @@ const props = defineProps({
             :key="index"
           >
             <div
-              class="
-                mt-1
-                flex
-                h-10
-                w-10
-                flex-shrink-0
-                items-center
-                justify-center
-                rounded-md
-                bg-pink-500
-              "
+              class="mt-1 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-pink-500"
             >
               <v-icon :name="detail.icon" class="h-7 w-7 text-pink-50" />
             </div>
