@@ -1,35 +1,19 @@
 <template>
   <div
-    class="
-      grid grid-cols-2
-      items-center
-      gap-4
-      bg-white
-      py-4
-      px-2
-      shadow
-      lg:grid-cols-12 lg:px-8
-    "
+    class="grid grid-cols-2 items-center gap-4 bg-white py-4 px-2 shadow lg:grid-cols-12 lg:px-8"
   >
     <div class="lg:col-span-2">
       <v-app-link
         :href="$route('post.home')"
-        class="text-2xl font-bold flex flex-row space-x-2 items-center"
+        class="flex flex-row items-center space-x-2 text-2xl font-bold"
       >
-        <img src="/images/logo.png" class="w-10 h-10" />
+        <img src="/images/logo.png" class="h-10 w-10" />
         <span>Patingalloang</span>
       </v-app-link>
     </div>
     <div class="ml-auto inline lg:hidden">
       <button
-        class="
-          rounded-md
-          p-2
-          focus:outline-none
-          focus:ring-2
-          focus:ring-pink-500
-          focus:ring-offset-2
-        "
+        class="rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
         @click.prevent="state.toggle"
       >
         <svg
