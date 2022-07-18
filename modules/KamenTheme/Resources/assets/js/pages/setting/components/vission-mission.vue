@@ -20,7 +20,7 @@ onMounted(() => {
   form.vission = props.vm?.vission;
   form.mission = props.vm?.mission;
 
-  if (props.vm.details) {
+  if (props.vm?.details) {
     form.points = props.vm.details.map((v) => {
       return {
         icon: v.icon,

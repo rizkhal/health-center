@@ -11,7 +11,7 @@ class LogoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'logo' => ['required'],
+            // 'logo' => ['required'],
             'logo_alt' => ['nullable'],
         ];
     }
