@@ -39,6 +39,27 @@
     </v-app-link>
   </li>
   <li>
+    <v-dropdown position="right">
+      <template #button="{ open }">
+        <div
+          :class="{ 'font-semibold text-pink-500': open }"
+          class="flex flex-row items-center p-4 lg:p-0"
+        >
+          Informasi
+        </div>
+      </template>
+      <template #content>
+        <div class="flex w-full flex-col space-y-4 p-4">
+          <a href="#">Hipertensi</a>
+          <a href="#">PHBS</a>
+          <a href="#">Jadwal Pelayanan</a>
+          <a href="#">Skening Riwayat Kesehatan BPJS</a>
+          <a href="#" @click.stop="leftDown">Covid 19</a>
+        </div>
+      </template>
+    </v-dropdown>
+  </li>
+  <li>
     <v-app-link
       :href="$route('post.service')"
       :class="active('KamenTheme::page/service')"
@@ -47,20 +68,15 @@
       Pelayanan
     </v-app-link>
   </li>
-  <li>
-    <v-app-link
-      :href="$route('post.information')"
-      :class="active('KamenTheme::page/information')"
-      class="flex flex-row items-center p-4 lg:p-0"
-    >
-      Informasi
-    </v-app-link>
-  </li>
 </template>
 <script setup>
 import { usePage } from "@inertiajs/inertia-vue3";
 
 const page = usePage();
+
+const leftDown = () => {
+  console.log("clicked");
+};
 
 // TODO: FIX ACTIVE COMPONENT STATE
 const active = (component) => {

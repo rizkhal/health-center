@@ -32,7 +32,8 @@ const props = defineProps({
       </transition>
 
       <!-- search modal -->
-      <kamen-search-modal />
+      <!-- disabled modal -->
+      <!-- <kamen-search-modal /> -->
 
       <div>
         <kamen-floating-button

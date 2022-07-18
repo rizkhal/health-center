@@ -32,10 +32,13 @@ const props = defineProps({
             :href="$route('post.service')"
             target="_blank"
             rel="noopener"
-            class="flex items-center rounded-md bg-pink-600 px-6 py-3 text-center text-lg font-bold text-white"
+            class="flex items-center rounded-md bg-pink-600 px-2 py-1 text-center text-xs text-white lg:px-6 lg:py-3 lg:text-lg lg:font-bold"
           >
             Pelayanan
-            <v-icon name="ArrowSmRightIcon" class="ml-2 h-6 w-6" />
+            <v-icon
+              name="ArrowSmRightIcon"
+              class="ml-2 h-3 w-3 lg:h-6 lg:w-6"
+            />
           </v-app-link>
         </div>
       </div>
