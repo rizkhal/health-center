@@ -77,7 +77,8 @@ export default {
         toolbar:
           "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
         menubar: true,
-        convert_urls: true,
+        convert_urls: false,
+        relative_urls : true,
         document_base_url: process.env.MIX_APP_URL,
         images_upload_handler: (blobInfo, success, failure) => {
           const formData = new FormData();

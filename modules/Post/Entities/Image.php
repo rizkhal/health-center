@@ -29,9 +29,9 @@ class Image extends Model
             get: fn ($value) => Str::of($value)->whenStartsWith(
                 ['http://', 'https://'],
                 fn ($str) => $str,
-                fn () => Str::contains($value, 'storage') ? "/{$value}" : config('app.url')."/storage/{$value}"
+                fn () => Str::contains($value, 'storage') ? '/'.$value : config('app.url')."/storage/{$value}"
             ),
-            set: fn ($value) => Str::after("{$value}/", config('app.url'))
+            set: fn ($value) => Str::after("{$value}", config('app.url'))
         );
     }
 }
