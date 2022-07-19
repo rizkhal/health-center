@@ -2,15 +2,15 @@
 
 namespace Modules\KamenTheme\Http\Controllers;
 
-use Inertia\Response;
-use Illuminate\Support\Str;
 use Illuminate\Routing\Controller;
-use Modules\KamenTheme\Enums\MediaSocials;
+use Illuminate\Support\Str;
+use Inertia\Response;
 use Modules\KamenTheme\Actions\SettingAction;
 use Modules\KamenTheme\Entities\Setting\Hero;
 use Modules\KamenTheme\Entities\Setting\Logo;
 use Modules\KamenTheme\Entities\Setting\MediaSocial;
 use Modules\KamenTheme\Entities\Setting\VissionMission;
+use Modules\KamenTheme\Enums\MediaSocials;
 use Modules\KamenTheme\Http\Requests\MediaSocialRequest;
 use Modules\KamenTheme\Http\Requests\Setting\HeroRequest;
 use Modules\KamenTheme\Http\Requests\Setting\LogoRequest;
@@ -46,12 +46,12 @@ class SettingController extends Controller
                     'logo_alternative' => $request->logo_alt,
                     'logo' => $request->hasFile('logo')
                         ? $request->getLogoPath()
-                        : Str::after($logo->logo, config('app.url') . '/'),
+                        : Str::after($logo->logo, config('app.url').'/'),
                 ]);
             } else {
                 Logo::create([
                     'logo_alternative' => $request->logo_alt,
-                    'logo' => $request->hasFile('logo') ? $request->getLogoPath() : null
+                    'logo' => $request->hasFile('logo') ? $request->getLogoPath() : null,
                 ]);
             }
 
