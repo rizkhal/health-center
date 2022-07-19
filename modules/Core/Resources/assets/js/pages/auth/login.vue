@@ -61,7 +61,7 @@ export default {
       form: this.$inertia.form({
         email: null,
         password: null,
-        remember: true,
+        remember: false,
       }),
     };
   },

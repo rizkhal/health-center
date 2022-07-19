@@ -50,11 +50,21 @@
       </template>
       <template #content>
         <div class="flex w-full flex-col space-y-4 p-4">
-          <a href="#">Hipertensi</a>
-          <a href="#">PHBS</a>
-          <a href="#">Jadwal Pelayanan</a>
-          <a href="#">Skening Riwayat Kesehatan BPJS</a>
-          <a href="#" @click.stop="leftDown">Covid 19</a>
+          <v-app-link :href="$route('post.information.hipertency')"
+            >Hipertensi</v-app-link
+          >
+          <v-app-link :href="$route('post.information.phbs')">PHBS</v-app-link>
+          <v-app-link :href="$route('post.information.service_schedules')"
+            >Jadwal Pelayanan</v-app-link
+          >
+          <v-app-link :href="$route('post.information.bpjs')"
+            >Skening Riwayat Kesehatan BPJS</v-app-link
+          >
+          <v-app-link
+            :href="$route('post.information.covid')"
+            @click.stop="leftDown"
+            >Covid 19</v-app-link
+          >
         </div>
       </template>
     </v-dropdown>

@@ -980,6 +980,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1.25rem;
 }.mt-1{
   margin-top: 0.25rem;
+}.mt-10{
+  margin-top: 2.5rem;
 }.mr-3{
   margin-right: 0.75rem;
 }.-ml-1{
@@ -996,8 +998,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: -0.25rem;
 }.mt-6{
   margin-top: 1.5rem;
-}.mt-10{
-  margin-top: 2.5rem;
 }.ml-12{
   margin-left: 3rem;
 }.mb-20{
@@ -1285,18 +1285,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
-}.space-y-24 > :not([hidden]) ~ :not([hidden]){
-  --tw-space-y-reverse: 0;
-  margin-top: calc(6rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(6rem * var(--tw-space-y-reverse));
-}.space-y-16 > :not([hidden]) ~ :not([hidden]){
-  --tw-space-y-reverse: 0;
-  margin-top: calc(4rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(4rem * var(--tw-space-y-reverse));
-}.space-y-52 > :not([hidden]) ~ :not([hidden]){
-  --tw-space-y-reverse: 0;
-  margin-top: calc(13rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(13rem * var(--tw-space-y-reverse));
 }.divide-y > :not([hidden]) ~ :not([hidden]){
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
