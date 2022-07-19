@@ -28,7 +28,7 @@ const submit = () => {
 <template>
   <v-form-container title="Logo Aplikasi" @onSubmit="submit">
     <div class="flex flex-col space-y-4">
-      <!-- <div class="mb-8 flex flex-col items-center justify-center">
+      <div class="mb-8 flex flex-col items-center justify-center">
         <input
           ref="logo"
           type="file"
@@ -47,7 +47,7 @@ const submit = () => {
         <div v-if="form.errors.logo" class="form-error">
           {{ form.errors.logo }}
         </div>
-      </div> -->
+      </div>
 
       <v-text
         type="text"
