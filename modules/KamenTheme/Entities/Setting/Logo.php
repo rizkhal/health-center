@@ -12,14 +12,15 @@ class Logo extends Model
 
     protected $guarded = [];
 
-    public function logo(): Attribute
+    protected function logo(): Attribute
     {
         return Attribute::make(
             get: fn ($value) => Str::of($value)->whenStartsWith(
                 ['http://', 'https://'],
                 fn ($str) => $str,
-                fn () => config('app.url')."/{$value}"
+                fn () => Str::contains($value, 'storage') ? '/' . $value : config('app.url') . "/storage/{$value}"
             ),
+            set: fn ($value) => Str::after("{$value}", config('app.url'))
         );
     }
 }

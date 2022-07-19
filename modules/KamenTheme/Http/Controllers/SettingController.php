@@ -2,14 +2,15 @@
 
 namespace Modules\KamenTheme\Http\Controllers;
 
-use Illuminate\Routing\Controller;
 use Inertia\Response;
+use Illuminate\Support\Str;
+use Illuminate\Routing\Controller;
+use Modules\KamenTheme\Enums\MediaSocials;
 use Modules\KamenTheme\Actions\SettingAction;
 use Modules\KamenTheme\Entities\Setting\Hero;
 use Modules\KamenTheme\Entities\Setting\Logo;
 use Modules\KamenTheme\Entities\Setting\MediaSocial;
 use Modules\KamenTheme\Entities\Setting\VissionMission;
-use Modules\KamenTheme\Enums\MediaSocials;
 use Modules\KamenTheme\Http\Requests\MediaSocialRequest;
 use Modules\KamenTheme\Http\Requests\Setting\HeroRequest;
 use Modules\KamenTheme\Http\Requests\Setting\LogoRequest;
@@ -39,11 +40,25 @@ class SettingController extends Controller
 
     public function logo(LogoRequest $request)
     {
-        if (SettingAction::set('setting_logo', $request->validated())) {
-            return back()->success(__('Berhasil mengatur logo'));
-        }
+        try {
+            if ($logo = Logo::first()) {
+                $logo->update([
+                    'logo_alternative' => $request->logo_alt,
+                    'logo' => $request->hasFile('logo')
+                        ? $request->getLogoPath()
+                        : Str::after($logo->logo, config('app.url') . '/'),
+                ]);
+            } else {
+                Logo::create([
+                    'logo_alternative' => $request->logo_alt,
+                    'logo' => $request->hasFile('logo') ? $request->getLogoPath() : null
+                ]);
+            }
 
-        return back()->error(__('Terjadi kesalahan saat mengatur logo'));
+            return back()->success(__('Logo berhasil diatur'));
+        } catch (\Throwable $th) {
+            return back()->error(__('Terjadi kesalahan saat mengatur logo'));
+        }
     }
 
     public function vm(VissionMissionRequest $request)
