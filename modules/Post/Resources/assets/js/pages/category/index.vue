@@ -20,18 +20,34 @@
     <template #created_at="{ item: { created_at } }">
       <span>{{ $helper.formatDate(created_at) }}</span>
     </template>
-    <template #action="{ item: { id } }">
+    <template #action="{ item }">
       <div class="flex space-x-2">
         <button
-          @click.prevent="edit(id)"
-          class="rounded-md bg-yellow-400 p-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2"
+          @click.prevent="edit(item)"
+          class="
+            rounded-md
+            bg-yellow-400
+            p-2
+            focus:outline-none
+            focus:ring-2
+            focus:ring-yellow-400
+            focus:ring-offset-2
+          "
         >
           <v-icon name="PencilIcon" type="solid" class="h-3 w-3 text-white" />
         </button>
         <button
           @click.prevent="destroy(id)"
           type="button"
-          class="rounded-md bg-red-500 p-2 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+          class="
+            rounded-md
+            bg-red-500
+            p-2
+            focus:outline-none
+            focus:ring-2
+            focus:ring-red-500
+            focus:ring-offset-2
+          "
         >
           <v-icon name="TrashIcon" type="solid" class="h-3 w-3 text-white" />
         </button>
@@ -51,12 +67,12 @@ export default {
         component: require("./create.vue").default,
       });
     },
-    edit(id) {
-      // this.$modal.open({
-      //   title: "Update Category",
-      //   category: this.category,
-      //   component: require("./edit.vue").default,
-      // });
+    edit(category) {
+      this.$modal.open({
+        title: "Update Category",
+        category: category,
+        component: require("./edit.vue").default,
+      });
     },
     destroy(id) {
       this.$modal.destroy({
