@@ -28,7 +28,7 @@ const covid = useForm({
 <template>
   <div class="flex flex-col space-y-4">
     <v-page-editor
-      label="Hipertency"
+      label="Hipertensi"
       :value="hipertency?.content"
       v-model="hipertency.content"
       @onSubmit="

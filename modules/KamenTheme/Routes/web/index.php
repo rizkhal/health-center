@@ -30,5 +30,13 @@ Route::prefix('/post')->as('post.')->middleware(HandleKamenThemeInertiaRequest::
         Route::get('/satisfaction', 'satisfaction')->name('satisfaction');
         Route::get('/service', 'service')->name('service');
         Route::get('/information', 'information')->name('information');
+        // ...
+        Route::prefix('/information')->as('information.')->group(function () {
+            Route::get('/hipertency', 'hipertency')->name('hipertency');
+            Route::get('/phbs', 'phbs')->name('phbs');
+            Route::get('/service_schedules', 'service_schedules')->name('service_schedules');
+            Route::get('/bpjs', 'bpjs')->name('bpjs');
+            Route::get('/covid', 'covid')->name('covid');
+        });
     });
 });

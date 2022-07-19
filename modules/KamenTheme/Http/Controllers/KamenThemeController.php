@@ -10,11 +10,16 @@ use Inertia\Response;
 use Modules\KamenTheme\Entities\Setting\Hero;
 use Modules\KamenTheme\Entities\Setting\Logo;
 use Modules\KamenTheme\Entities\Setting\VissionMission;
+use Modules\Post\Entities\Bpjs;
+use Modules\Post\Entities\Covid;
 use Modules\Post\Entities\Facility;
+use Modules\Post\Entities\Hipertency;
 use Modules\Post\Entities\Information;
+use Modules\Post\Entities\Phbs;
 use Modules\Post\Entities\Post;
 use Modules\Post\Entities\Satisfaction;
 use Modules\Post\Entities\Service;
+use Modules\Post\Entities\ServiceSchedule;
 
 class KamenThemeController extends Controller
 {
@@ -80,10 +85,38 @@ class KamenThemeController extends Controller
         ])->title(__('Fasilitas'));
     }
 
-    public function information(): Response
+    public function hipertency(): Response
     {
-        return inertia('KamenTheme::page/information', [
-            'information' => Information::first(),
-        ])->title(__('Fasilitas'));
+        return inertia('KamenTheme::page/information/hipertency', [
+            'data' => Hipertency::first(),
+        ])->title(__('Hipertensi'));
+    }
+
+    public function phbs(): Response
+    {
+        return inertia('KamenTheme::page/information/phbs', [
+            'data' => Phbs::first(),
+        ])->title(__('Phbs'));
+    }
+
+    public function service_schedules()
+    {
+        return inertia('KamenTheme::page/information/service_schedule', [
+            'data' => ServiceSchedule::first(),
+        ])->title(__('Jadwal Pelyanan'));
+    }
+
+    public function bpjs()
+    {
+        return inertia('KamenTheme::page/information/bpjs', [
+            'data' => Bpjs::first(),
+        ])->title(__('Bpjs'));
+    }
+
+    public function covid()
+    {
+        return inertia('KamenTheme::page/information/covid', [
+            'data' => Covid::first(),
+        ])->title(__('Covid 19'));
     }
 }
