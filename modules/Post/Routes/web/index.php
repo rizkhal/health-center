@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Modules\Post\Http\Controllers\Api\CategoryJsonController;
 use Modules\Post\Http\Controllers\PageController;
+use Modules\Post\Http\Controllers\PageInformationController;
 use Modules\Post\Http\Controllers\SettingController;
 
 Route::middleware(['web', 'auth'])->prefix('post')->as('post.')->group(function () {
@@ -24,9 +25,15 @@ Route::middleware(['web', 'auth'])->prefix('post')->as('post.')->group(function 
         Route::get('/service', 'service')->name('service');
         Route::post('/service/store', 'submitService')->name('submit.service');
 
-        // informasi
-        Route::get('/information', 'information')->name('information');
-        Route::post('/information/store', 'submitInformation')->name('submit.information');
+        // information
+        Route::prefix('information')->as('information.')->group(function () {
+            Route::get('/', 'information')->name('index');
+            Route::post('/hipertency', 'hipertency')->name('hipertency');
+            Route::post('/phbs', 'phbs')->name('phbs');
+            Route::post('/service_schedules', 'service_schedules')->name('service_schedules');
+            Route::post('/bpjs', 'bpjs')->name('bpjs');
+            Route::post('/covid', 'covid')->name('covid');
+        });
     });
 
     Route::get('/select/category', [CategoryJsonController::class, 'index']);

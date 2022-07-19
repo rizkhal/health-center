@@ -59,9 +59,9 @@ export default {
   data() {
     return {
       form: this.$inertia.form({
-        email: "admin@mail.com",
-        password: "secret123",
-        remember: false,
+        email: null,
+        password: null,
+        remember: true,
       }),
     };
   },

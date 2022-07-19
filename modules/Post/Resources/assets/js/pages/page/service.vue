@@ -16,7 +16,7 @@ const submit = () => {
   <div class="p-5">
     <v-editor
       :required="true"
-      label="Informasi"
+      label="Layanan"
       v-model="form.content"
       :value="service?.content"
       style="height: 700px"
