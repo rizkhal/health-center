@@ -9,7 +9,7 @@ class Service extends Model
 {
     use HasAuthor;
 
-    protected $table = 'informations';
+    protected $table = 'services';
 
     protected $fillable = ['content'];
 }

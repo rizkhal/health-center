@@ -24,12 +24,6 @@ return new class extends Migration {
             $table->longText('content');
             $table->commonFields();
         });
-
-        Schema::create('informations', function (Blueprint $table) {
-            $table->id();
-            $table->longText('content');
-            $table->commonFields();
-        });
     }
 
     public function down()
@@ -37,6 +31,5 @@ return new class extends Migration {
         Schema::dropIfExists('facilities');
         Schema::dropIfExists('satisfactions');
         Schema::dropIfExists('services');
-        Schema::dropIfExists('informations');
     }
 };

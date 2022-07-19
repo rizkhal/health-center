@@ -2,13 +2,17 @@
 
 namespace Modules\Post\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 use Inertia\Response;
-use Modules\Post\Entities\Facility;
-use Modules\Post\Entities\Information;
-use Modules\Post\Entities\Satisfaction;
+use Illuminate\Http\Request;
+use Modules\Post\Entities\Bpjs;
+use Modules\Post\Entities\Phbs;
+use Modules\Post\Entities\Covid;
+use Illuminate\Routing\Controller;
 use Modules\Post\Entities\Service;
+use Modules\Post\Entities\Facility;
+use Modules\Post\Entities\Hipertency;
+use Modules\Post\Entities\Satisfaction;
+use Modules\Post\Entities\ServiceSchedule;
 
 class PageController extends Controller
 {
@@ -28,21 +32,7 @@ class PageController extends Controller
 
     public function submitFacility(Request $request)
     {
-        $request->validate([
-            'content' => ['required'],
-        ]);
-
-        try {
-            if ($m = Facility::first()) {
-                $m->update($request->all());
-            } else {
-                Facility::create($request->all());
-            }
-
-            return back()->success(__('Halaman berhasil diatur'));
-        } catch (\Throwable $th) {
-            return back()->error(__('Terjadi kesalahan'));
-        }
+        return $this->submit(new Facility(), $request);
     }
 
     public function satisfaction(): Response
@@ -54,21 +44,7 @@ class PageController extends Controller
 
     public function submitSatisfaction(Request $request)
     {
-        $request->validate([
-            'content' => ['required'],
-        ]);
-
-        try {
-            if ($m = Satisfaction::first()) {
-                $m->update($request->all());
-            } else {
-                Satisfaction::create($request->all());
-            }
-
-            return back()->success(__('Halaman berhasil diatur'));
-        } catch (\Throwable $th) {
-            return back()->error(__('Terjadi kesalahan'));
-        }
+        return $this->submit(new Satisfaction(), $request);
     }
 
     public function service()
@@ -80,41 +56,56 @@ class PageController extends Controller
 
     public function submitService(Request $request)
     {
-        $request->validate([
-            'content' => ['required'],
-        ]);
-
-        try {
-            if ($m = Service::first()) {
-                $m->update($request->all());
-            } else {
-                Service::create($request->all());
-            }
-
-            return back()->success(__('Halaman berhasil diatur'));
-        } catch (\Throwable $th) {
-            return back()->error(__('Terjadi kesalahan'));
-        }
+        return $this->submit(new Service(), $request);
     }
 
     public function information()
     {
-        return inertia('Post::page/information', [
-            'information' => Information::first(),
+        return inertia('Post::page/information/index', [
+            'hipertency' => Hipertency::first(),
+            'phbs' => Phbs::first(),
+            'bpjs' => Bpjs::first(),
+            'covid' => Covid::first(),
+            'service_schedules' => ServiceSchedule::first(),
         ])->title(__('Pelayanan'));
     }
 
-    public function submitInformation(Request $request)
+    public function hipertency(Request $request)
+    {
+        return $this->submit(new Hipertency(), $request);
+    }
+
+    public function phbs(Request $request)
+    {
+        return $this->submit(new Phbs(), $request);
+    }
+
+    public function service_schedules(Request $request)
+    {
+        return $this->submit(new ServiceSchedule(), $request);
+    }
+
+    public function bpjs(Request $request)
+    {
+        return $this->submit(new Bpjs(), $request);
+    }
+
+    public function covid(Request $request)
+    {
+        return $this->submit(new Covid(), $request);
+    }
+
+    private function submit($model, Request $request)
     {
         $request->validate([
             'content' => ['required'],
         ]);
 
         try {
-            if ($m = Information::first()) {
+            if ($m = $model::first()) {
                 $m->update($request->all());
             } else {
-                Information::create($request->all());
+                $model::create($request->all());
             }
 
             return back()->success(__('Halaman berhasil diatur'));
@@ -143,7 +134,7 @@ class PageController extends Controller
             ],
             __('Informasi') => [
                 'icon' => 'XIcon',
-                'url' => route('dashboard.post.page.information'),
+                'url' => route('dashboard.post.page.information.index'),
                 'text' => 'Kelola Fasilitas',
             ],
         ];
