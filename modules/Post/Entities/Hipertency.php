@@ -10,7 +10,7 @@ class Hipertency extends Model
     use HasAuthor;
 
     protected $table = 'hipertencies';
-    
+
     protected $fillable = [
         'content',
     ];

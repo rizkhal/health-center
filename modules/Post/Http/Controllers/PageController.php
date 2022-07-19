@@ -2,16 +2,16 @@
 
 namespace Modules\Post\Http\Controllers;
 
-use Inertia\Response;
 use Illuminate\Http\Request;
-use Modules\Post\Entities\Bpjs;
-use Modules\Post\Entities\Phbs;
-use Modules\Post\Entities\Covid;
 use Illuminate\Routing\Controller;
-use Modules\Post\Entities\Service;
+use Inertia\Response;
+use Modules\Post\Entities\Bpjs;
+use Modules\Post\Entities\Covid;
 use Modules\Post\Entities\Facility;
 use Modules\Post\Entities\Hipertency;
+use Modules\Post\Entities\Phbs;
 use Modules\Post\Entities\Satisfaction;
+use Modules\Post\Entities\Service;
 use Modules\Post\Entities\ServiceSchedule;
 
 class PageController extends Controller
