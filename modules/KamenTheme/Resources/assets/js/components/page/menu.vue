@@ -58,7 +58,7 @@
             >Jadwal Pelayanan</v-app-link
           >
           <v-app-link :href="$route('post.information.bpjs')"
-            >Skening Riwayat Kesehatan BPJS</v-app-link
+            >Skrining BPJS</v-app-link
           >
           <v-app-link
             :href="$route('post.information.covid')"
