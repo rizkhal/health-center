@@ -89,15 +89,15 @@ class MacroServiceProvider extends ServiceProvider
 
                                 [$relationName_1, $relationName_2, $relationAttribute_1] = explode('.', $attribute);
 
-                            $query->orWhereHas($relationName_1.'.'.$relationName_2, function (Builder $query) use ($relationAttribute_1, $searchTerm) {
-                                $query->where($relationAttribute_1, 'LIKE', "%{$searchTerm}%");
-                            }); else :
-                                [$relationName, $relationAttribute] = explode('.', $attribute);
+                                $query->orWhereHas($relationName_1.'.'.$relationName_2, function (Builder $query) use ($relationAttribute_1, $searchTerm) {
+                                    $query->where($relationAttribute_1, 'LIKE', "%{$searchTerm}%");
+                                }); else :
+                                    [$relationName, $relationAttribute] = explode('.', $attribute);
 
-                            $query->orWhereHas($relationName, function (Builder $query) use ($relationAttribute, $searchTerm) {
-                                $query->where($relationAttribute, 'LIKE', "%{$searchTerm}%");
-                            });
-                            endif;
+                                    $query->orWhereHas($relationName, function (Builder $query) use ($relationAttribute, $searchTerm) {
+                                        $query->where($relationAttribute, 'LIKE', "%{$searchTerm}%");
+                                    });
+                                endif;
                         },
                         function (Builder $query) use ($attribute, $searchTerm) {
                             $query->orWhere($attribute, 'LIKE', "%{$searchTerm}%");

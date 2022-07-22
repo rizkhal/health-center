@@ -2,10 +2,10 @@
 
 namespace Modules\Post\Http\Controllers;
 
-use Inertia\Response;
-use Spatie\Analytics\Period;
 use Analytics;
 use Illuminate\Routing\Controller;
+use Inertia\Response;
+use Spatie\Analytics\Period;
 
 class AnalyticController extends Controller
 {
