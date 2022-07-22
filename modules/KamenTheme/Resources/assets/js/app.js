@@ -1,3 +1,12 @@
+import { Inertia } from "@inertiajs/inertia";
+
+if (process.env.NODE_ENV === "production") {
+  Inertia.on("navigate", (event) => {
+    gtag("js", new Date());
+    gtag("config", "UA-235284297-1");
+  });
+}
+
 export default {
   install: (app, options) => {
     app.component(

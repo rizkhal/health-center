@@ -14,7 +14,6 @@ use Modules\Post\Entities\Bpjs;
 use Modules\Post\Entities\Covid;
 use Modules\Post\Entities\Facility;
 use Modules\Post\Entities\Hipertency;
-use Modules\Post\Entities\Information;
 use Modules\Post\Entities\Phbs;
 use Modules\Post\Entities\Post;
 use Modules\Post\Entities\Satisfaction;

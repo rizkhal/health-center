@@ -124,6 +124,6 @@
 <script setup>
 defineProps({
   articles_count: Number,
-  all_read_articles_couunt: Number,
+  all_read_articles_couunt: [String, Number],
 });
 </script>

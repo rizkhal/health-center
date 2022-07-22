@@ -26,6 +26,10 @@ class NavigatorServiceProvider extends ServiceProvider
                             ->for(route('dashboard.backup.index'))
                             ->heroicon('DatabaseIcon')
                             ->icon('outline'),
+                        Nav::item(__('Google Analytic'))
+                            ->for(route('dashboard.post.google-analytic'))
+                            ->heroicon('PresentationChartBarIcon')
+                            ->icon('outline'),
                     ],
                 ),
             ];
