@@ -47,7 +47,7 @@ createInertiaApp({
 
     return await page;
   },
-  title: (title) => `${title} - Laravel Inertia Vue Starter`,
+  title: (title) => `${title} - PKM Patingalloang`,
   setup({ el, App, props, plugin }) {
     const app = createApp({ render: () => h(App, props) }).use(plugin);
 
