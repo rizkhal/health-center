@@ -1,14 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\Post\Http\Controllers\AnalyticController;
 use Modules\Post\Http\Controllers\Api\CategoryJsonController;
 use Modules\Post\Http\Controllers\PageController;
-use Modules\Post\Http\Controllers\PageInformationController;
 use Modules\Post\Http\Controllers\SettingController;
 
 Route::middleware(['web', 'auth'])->prefix('post')->as('post.')->group(function () {
     Route::resource('/post', PostController::class);
     Route::resource('/category', CategoryController::class);
+
+    Route::get('/google-analytic', AnalyticController::class)->name('google-analytic');
 
     Route::controller(PageController::class)->prefix('/page')->as('page.')->group(function () {
         Route::get('/', 'index')->name('index');

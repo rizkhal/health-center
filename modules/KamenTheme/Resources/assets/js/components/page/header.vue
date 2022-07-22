@@ -7,7 +7,7 @@
         :href="$route('post.home')"
         class="flex flex-row items-center space-x-2 text-2xl font-bold"
       >
-        <img :src="logo.logo" class="w-[200px]" :alt="logo.logo_alternative" />
+        <img :src="logo.logo" class="w-[70px]" :alt="logo.logo_alternative" />
         <span>{{ logo.logo_alternative }}</span>
       </v-app-link>
     </div>

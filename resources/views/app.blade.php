@@ -37,6 +37,20 @@
         src="//portal-berita-1.disqus.com/count.js"
         async
     ></script>
+
+    @production
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-235284297-1"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+        </script>
+    @endproduction
 </body>
 
 </html>
