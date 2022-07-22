@@ -135,7 +135,7 @@ const shortTimestamp = (date) => {
   }
 
   return formatDistanceStrict(givenDate, todayDate, {
-    // locale: id,
+    locale: id,
     addSuffix: true,
   });
 };
