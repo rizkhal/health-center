@@ -3,7 +3,7 @@ import { Inertia } from "@inertiajs/inertia";
 // vps does't have any space to build on production mode T_T
 // if (process.env.NODE_ENV === "production") {
 Inertia.on("navigate", (event) => {
-  console.log('navigated!');
+  console.log("navigated!");
 
   gtag("js", new Date());
   gtag("config", "UA-235284297-1");
