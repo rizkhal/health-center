@@ -4,15 +4,10 @@ const props = defineProps({
 });
 </script>
 <template>
-  <div class="overflow-x-auto relative">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+  <div class="relative overflow-x-auto">
+    <table class="w-full text-left text-sm text-gray-500 dark:text-gray-400">
       <thead
-        class="
-          text-xs text-gray-700
-          uppercase
-          bg-gray-50
-          dark:bg-gray-700 dark:text-gray-400
-        "
+        class="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400"
       >
         <tr>
           <th>#</th>
@@ -26,7 +21,7 @@ const props = defineProps({
         <tr
           v-for="(analytic, index) in analytics"
           :key="index"
-          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+          class="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
         >
           <td>{{ ++index }}</td>
           <td>{{ $helper.shortTimestamp(analytic.date) }}</td>
